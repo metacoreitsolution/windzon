@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function typeSection(code, title, image, description, specs) {
-        var images = Array.isArray(image) ? image : [image, image, image];
+        var images = Array.isArray(image) ? image : [image];
         return {
             code: code,
             title: title,
@@ -511,92 +511,80 @@ document.addEventListener("DOMContentLoaded", function () {
             items: {
                 "sliding-doors": itemConfig({
                     title: "Sliding Doors",
-                    tagline: "System Detail",
-                    intro: "The sliding door inner page is now rebuilt in a more visual catalogue style so users can compare door system types and project intent more clearly.",
-                    overviewTitle: "Sliding Door Collection",
-                    overviewSummary: "Sliding doors support wide movement, large glazed openings, and a cleaner indoor-outdoor transition. They work well in patios, balconies, showrooms, and commercial frontage applications.",
-                    overviewImage: "assets/img/door/01.jpg",
-                    overviewPoints: ["Space-saving opening action", "Large glass areas and wide views", "Suitable for residential and commercial projects", "Supports premium handles and locking"],
-                    sourceNote: "This door page follows the new Windzon catalogue-style structure and focuses on practical system comparison.",
+                    tagline: "Catalogue Detail",
+                    intro: "A space-saving horizontal sliding system designed for large openings, seamless views, and smooth operation.",
+                    overviewTitle: "Sliding Door System",
+                    overviewSummary: "Sliding door systems are ideal for wide openings where space-saving movement, larger glass areas, and smooth daily operation are essential.",
+                    overviewImage: "Door/Sliding Door.png",
+                    overviewPoints: ["Frame depth: 60 mm - 150 mm", "Track options: 2 / 3 / 4 track systems", "Max panel weight: 80 - 200 kg", "Max height: Up to 3000 mm"],
+                    sourceNote: "Sliding door system content is updated from the technical details you provided and rebuilt into Windzon’s catalogue-style layout.",
                     types: [
-                        typeSection("SD - 90", "Two Track Sliding Door", "assets/img/door/01.jpg", "A streamlined two-track sliding door suited to residences and balcony-facing openings that need easy movement and clean detailing.", ["Two-track movement concept", "Clean modern aluminium frame", "Suitable for patios and balconies", "Supports premium glass options", "Space-efficient opening", "Low maintenance daily use"]),
-                        typeSection("SD - 120", "Wide Span Sliding Door", "assets/img/door/01.jpg", "A broader sliding configuration for larger glass spans, premium homes, and commercial spaces that need stronger visual openness.", ["Wider opening suitability", "Large glass presentation", "Ideal for premium homes", "Commercial frontage friendly", "Smooth heavy-panel handling intent", "Modern finish-led design"]),
-                        typeSection("SD - Panorama", "Panoramic Sliding Series", "assets/img/door/01.jpg", "A premium panoramic system created for maximum view, enhanced daylight, and refined project styling in statement spaces.", ["Panoramic visual appeal", "Premium movement system", "High-end architectural use", "Luxury villa application", "Broad daylight entry", "Strong indoor-outdoor transition"])
+                        typeSection("SD - 01", "Sliding Door System", "Door/Sliding Door.png", "A space-saving horizontal sliding system designed for large openings, seamless views, and smooth operation.", ["Frame depth: 60 mm - 150 mm (depending on track system)", "Locking type: Hook lock / multipoint lock", "Glass range: 5 mm - 28 mm (Double glazing optional)", "Shutter sight line: 35 mm - 80 mm", "Track options: 2 / 3 / 4 track systems", "Sealing: Brush + EPDM gasket combination", "Max panel weight: 80 - 200 kg", "Max height: Up to 3000 mm", "Hardware: Rollers, handles, locks (Kinlong / Giesse compatible)"])
                     ]
                 }),
                 "hinged-doors": itemConfig({
                     title: "Hinged Doors",
                     tagline: "Catalogue Detail",
-                    intro: "The hinged door page now adopts a more technical product-sheet flow, including door type comparisons and clearer system selection guidance.",
+                    intro: "A classic swing door system offering strong sealing, security, and versatility for residential and commercial use.",
                     overviewTitle: "Hinged Door System Range",
-                    overviewSummary: "Hinged aluminium doors remain a premium and dependable solution for entries, access points, internal partitions, and designer openings that need strong closure and quality hardware.",
-                    overviewImage: "assets/img/door/01.jpg",
-                    overviewPoints: ["Strong closure and entry-focused performance", "Compatible with premium locksets and hinges", "Good for residential and office applications", "Built around daily-use durability"],
-                    sourceNote: "Type references for hinged-style systems are adapted from the casement door section of the Ventarch catalogue and restyled for Windzon.",
+                    overviewSummary: "Hinged door systems are suited to projects that need strong sealing, secure locking, and reliable inward or outward swing operation for residential and commercial applications.",
+                    overviewImage: "Door/Hanging Door.png",
+                    overviewPoints: ["Frame depth: 50 mm - 100 mm", "Locking type: Single / multipoint locking", "Opening type: Inward / outward", "Max height: 2400 mm"],
+                    sourceNote: "Hinged door system content is updated from the technical details you provided and rebuilt into Windzon’s catalogue-style layout.",
                     types: [
-                        typeSection("HD - 40", "40 mm Hinged Door", "assets/img/door/01.jpg", "A reliable hinged door solution for standard entries and internal access points where balanced durability and premium appearance are required.", ["Frame depth: 40 mm", "Glass range: 5 mm to 28 mm", "Openable sight line: 104.4 mm", "Fix sight line: 55.3 mm", "Sealing overlap: 6 mm with gasket", "Height support: up to 2135 mm", "Hardware: SCHLEGEL GIESSE", "Suitable for single and double leaf use"]),
-                        typeSection("HD - 50", "50 mm Hinged Door", "assets/img/door/01.jpg", "A more robust hinged door option for larger entries and premium projects that need stronger door-bottom support and broader glazing compatibility.", ["Frame depth: 50 mm", "Glass range: 5 mm to 38 mm", "Openable sight line: 142 mm", "Fix sight line: 74 mm", "Sealing overlap: 6 mm with gasket", "Height support: up to 2440 mm", "Hardware: SCHLEGEL GIESSE", "Available in inside and outside openable versions"]),
-                        typeSection("HD - Premium", "Premium Entry Door", "assets/img/door/01.jpg", "A premium entry configuration focused on better hardware integration, stronger visual width, and higher-end entrance styling.", ["Premium entry appearance", "Larger opening suitability", "Enhanced lock compatibility", "Ideal for villas and showrooms", "Better glass flexibility", "High-end finish compatibility"])
+                        typeSection("HD - 01", "Hinged Door System", "Door/Hanging Door.png", "A classic swing door system offering strong sealing, security, and versatility for residential and commercial use.", ["Frame depth: 50 mm - 100 mm", "Locking type: Single / multipoint locking", "Glass range: 5 mm - 36 mm", "Shutter sight line: 80 mm - 120 mm", "Opening type: Inward / outward", "Sealing overlap: 6 mm - 8 mm (EPDM gasket)", "Max height: 2400 mm", "Hardware: Hinges, handles, door closers, locks"])
                     ]
                 }),
                 "fixed-glass-doors": itemConfig({
                     title: "Fixed Glass Doors",
-                    tagline: "System Detail",
-                    intro: "This page presents fixed glass door solutions in a more editorial catalogue format, emphasizing visibility, glass presence, and interior-commercial use cases.",
-                    overviewTitle: "Fixed Glass Door Series",
-                    overviewSummary: "Fixed glass doors are selected for spaces where openness, visibility, and a clean glass-led entrance matter most. They suit showrooms, office cabins, premium partitions, and minimalist interiors.",
-                    overviewImage: "assets/img/door/01.jpg",
-                    overviewPoints: ["Glass-forward modern appearance", "Ideal for offices, showrooms, and designer spaces", "Can be paired with premium handles and hardware", "Strong fit for clean interior partition language"],
-                    sourceNote: "This content is adapted into a Windzon-first presentation and is intentionally different from the reference layout.",
+                    tagline: "Catalogue Detail",
+                    intro: "A non-openable or partially fixed glass door system used for partitions, entrances, and aesthetic transparency.",
+                    overviewTitle: "Fixed Glass Door System",
+                    overviewSummary: "Fixed glass door systems are ideal for partitions, entrances, and spaces where visual openness and minimal framing are important.",
+                    overviewImage: "Door/Fixed Door.png",
+                    overviewPoints: ["Frame depth: 30 mm - 60 mm", "Locking type: Not applicable (fixed panel)", "Glass range: 8 mm - 15 mm", "Max height: Up to 3000 mm"],
+                    sourceNote: "Fixed glass door system content is updated from the technical details you provided and rebuilt into Windzon’s catalogue-style layout.",
                     types: [
-                        typeSection("FGD - Slim", "Slim Glass Entry", "assets/img/door/01.jpg", "A slim-profile glass-focused door format for clean office and residential transitions.", ["Minimal visible frame", "Strong glass emphasis", "Good for office entries", "Contemporary design language", "Easy integration with premium hardware", "Suitable for partitions"]),
-                        typeSection("FGD - Office", "Office Glass Door", "assets/img/door/01.jpg", "A practical glass-led door for cabins, meeting rooms, and commercial interiors that need visibility and polish.", ["Professional modern appearance", "Suitable for internal commercial spaces", "Supports clear and frosted glass", "Clean partition integration", "Good for cabins and meeting rooms", "Premium handle compatibility"]),
-                        typeSection("FGD - Signature", "Signature Glass Series", "assets/img/door/01.jpg", "A higher-end glass door styling for premium interiors where visual openness and design value are both important.", ["Luxury visual finish", "Designer interior fit-outs", "High transparency impact", "Strong architectural appeal", "Elegant finish palette", "Project-led customization"])
+                        typeSection("FGD - 01", "Fixed Glass Door System", "Door/Fixed Door.png", "A non-openable or partially fixed glass door system used for partitions, entrances, and aesthetic transparency.", ["Frame depth: 30 mm - 60 mm", "Locking type: Not applicable (fixed panel)", "Glass range: 8 mm - 15 mm (Toughened glass)", "Sight line: 25 mm - 50 mm", "Sealing: Silicone / gasket sealing", "Max height: Up to 3000 mm", "Hardware: Patch fittings / minimal frame accessories"])
                     ]
                 }),
                 "folding-doors": itemConfig({
                     title: "Folding Doors",
-                    tagline: "System Detail",
-                    intro: "The folding door detail page now compares opening-focused variants in a more technical and presentation-ready style.",
-                    overviewTitle: "Folding Door Collection",
-                    overviewSummary: "Folding doors open up larger spans and are ideal for hospitality, premium residential transitions, and spaces that need flexible opening width with strong visual impact.",
-                    overviewImage: "assets/img/door/01.jpg",
-                    overviewPoints: ["Wide opening for flexible planning", "Suitable for patios and hospitality fronts", "Multi-panel movement system", "Strong premium visual effect"],
-                    sourceNote: "The layout is original to Windzon and focuses on system comparison rather than copying the source design language directly.",
+                    tagline: "Catalogue Detail",
+                    intro: "A multi-panel folding system that opens fully to create wide, unobstructed openings.",
+                    overviewTitle: "Folding Door System (Bi-Fold)",
+                    overviewSummary: "Bi-fold door systems are ideal for projects that need wide full-opening access, flexible panel movement, and strong indoor-outdoor transition.",
+                    overviewImage: "Door/Folding Door.png",
+                    overviewPoints: ["Frame depth: 60 mm - 100 mm", "Opening style: Inward / outward folding", "Max panel weight: 80 - 120 kg", "Max height: 3000 mm"],
+                    sourceNote: "Folding door system content is updated from the technical details you provided and rebuilt into Windzon’s catalogue-style layout.",
                     types: [
-                        typeSection("FD - Compact", "Compact Folding Door", "assets/img/door/01.jpg", "A compact folding arrangement for premium residential areas where opening flexibility is needed without very large spans.", ["Compact multi-panel stack", "Suitable for residential openings", "Good for patios and terraces", "Smooth guided movement intent", "Premium contemporary styling", "Space-opening visual effect"]),
-                        typeSection("FD - Wide", "Wide Opening Folding Door", "assets/img/door/01.jpg", "A broader panel arrangement for cafes, lounges, and premium villa openings where a large clear opening is a major design feature.", ["Wider opening system", "Ideal for cafes and social spaces", "Indoor-outdoor flexibility", "Premium track-led movement", "Strong visual transformation", "Hospitality-friendly design"]),
-                        typeSection("FD - Signature", "Signature Folding Series", "assets/img/door/01.jpg", "A premium folding door setup for statement projects that want a more luxurious and dramatic opening experience.", ["Luxury project fit", "Premium panel movement", "High-end facade statement", "Strong daylight transition", "Signature architectural appeal", "Custom fabrication support"])
+                        typeSection("FD - 01", "Folding Door System (Bi-Fold)", "Door/Folding Door.png", "A multi-panel folding system that opens fully to create wide, unobstructed openings.", ["Frame depth: 60 mm - 100 mm", "Locking type: Multipoint locking", "Glass range: 5 mm - 28 mm", "Panel sight line: 70 mm - 100 mm", "Opening style: Inward / outward folding", "Sealing: Brush + gasket combination", "Max panel weight: 80 - 120 kg", "Max height: 3000 mm", "Hardware: Rollers, hinges, top/bottom tracks"])
                     ]
                 }),
                 "french-doors": itemConfig({
                     title: "French Doors",
-                    tagline: "Design Detail",
-                    intro: "The French door page is now structured like a product sheet, helping clients understand styling intent, project fit, and premium use scenarios.",
-                    overviewTitle: "French Door Design Series",
-                    overviewSummary: "French doors combine balanced symmetry, decorative glazing potential, and a timeless upscale character. They are ideal for balconies, gardens, and premium room-to-room transitions.",
-                    overviewImage: "assets/img/door/01.jpg",
-                    overviewPoints: ["Elegant symmetrical opening", "Ideal for premium homes and garden-facing rooms", "Supports decorative and clear glazing", "Timeless premium visual language"],
-                    sourceNote: "This page uses Windzon’s custom layout while preserving the comparison-focused product storytelling you requested.",
+                    tagline: "Catalogue Detail",
+                    intro: "A double-leaf hinged door system offering elegance, symmetry, and wide opening access.",
+                    overviewTitle: "French Door System",
+                    overviewSummary: "French door systems are ideal for projects that need symmetrical double-shutter access, elegant proportions, and wider opening movement.",
+                    overviewImage: "Door/French Doors.png",
+                    overviewPoints: ["Frame depth: 50 mm - 90 mm", "Locking type: Multipoint lock with handle", "Opening type: Inward / outward (double shutter)", "Max height: 2400 mm"],
+                    sourceNote: "French door system content is updated from the technical details you provided and rebuilt into Windzon’s catalogue-style layout.",
                     types: [
-                        typeSection("FDR - Classic", "Classic French Door", "assets/img/door/01.jpg", "A classic balanced French door configuration that suits balconies, lounges, and elegant transitions in high-value residential spaces.", ["Symmetrical double-door look", "Good for balconies and terraces", "Premium design character", "Supports decorative glazing", "Suitable for villas and bungalows", "Classic-modern blend"]),
-                        typeSection("FDR - Garden", "Garden French Door", "assets/img/door/01.jpg", "A garden-facing French door style for homes that need a lighter, open, and more welcoming transition to outdoor spaces.", ["Best for garden openings", "Broad daylight and view", "Decorative premium styling", "Comfortable everyday access", "Premium finish choices", "Ideal for living zones"]),
-                        typeSection("FDR - Luxe", "Luxe French Series", "assets/img/door/01.jpg", "A more refined French door variation for designer projects where visual softness and upscale detailing are especially important.", ["Luxury styling", "Designer project ready", "Decorative glazing support", "High-end finish palette", "Elegant interior transition", "Premium hardware options"])
+                        typeSection("FDR - 01", "French Door System", "Door/French Doors.png", "A double-leaf hinged door system offering elegance, symmetry, and wide opening access.", ["Frame depth: 50 mm - 90 mm", "Locking type: Multipoint lock with handle", "Glass range: 5 mm - 24 mm", "Shutter sight line: 80 mm - 110 mm", "Opening type: Inward / outward (double shutter)", "Sealing overlap: 6 mm - 8 mm", "Max height: 2400 mm", "Hardware: Hinges, handles, tower bolts"])
                     ]
                 }),
                 "customized-doors": itemConfig({
                     title: "Customized Doors",
-                    tagline: "Project Detail",
-                    intro: "This page turns customized doors into a clearer solution page, showing how different configuration types can be selected based on design and project need.",
-                    overviewTitle: "Customized Door Solutions",
-                    overviewSummary: "Customized doors are made for non-standard openings, special dimensions, distinctive finish selections, and project-specific architectural language.",
-                    overviewImage: "assets/img/door/01.jpg",
-                    overviewPoints: ["Built around project-specific dimensions", "Supports special finishes and hardware", "Ideal for signature residences and commercial spaces", "Flexible panel and glazing arrangements"],
-                    sourceNote: "This section is written specifically for Windzon and organised in the new catalogue-style inner page format.",
+                    tagline: "Catalogue Detail",
+                    intro: "A tailor-made door system designed for unique architectural requirements, combining functionality with design flexibility.",
+                    overviewTitle: "Customized Door System",
+                    overviewSummary: "Customized door systems are suited to projects that need flexible design options, non-standard dimensions, and premium hardware solutions built around the project brief.",
+                    overviewImage: "Door/Custom Doors.png",
+                    overviewPoints: ["Frame depth: 50 mm - 150 mm (customized)", "Design options: Sliding / hinged / pivot / mixed systems", "Glass range: 5 mm - 40 mm", "Max height: Up to 3500 mm"],
+                    sourceNote: "Customized door system content is updated from the technical details you provided and rebuilt into Windzon’s catalogue-style layout.",
                     types: [
-                        typeSection("CD - Signature", "Signature Custom Door", "assets/img/door/01.jpg", "A made-to-order door concept for standout entrances and premium architectural moments.", ["Custom dimensioning", "Project-driven styling", "Supports statement entrances", "Premium hardware integration", "Designer-friendly solution", "Flexible material and glazing mix"]),
-                        typeSection("CD - Commercial", "Commercial Custom Door", "assets/img/door/01.jpg", "A practical custom door format for offices, showrooms, and mixed-use spaces where standard systems do not fit the opening requirements.", ["Non-standard opening support", "Commercial project friendly", "Flexible frame and infill planning", "Reliable heavy-use suitability", "Professional finish options", "Installation-led customization"]),
-                        typeSection("CD - Premium", "Premium Bespoke Door", "assets/img/door/01.jpg", "A bespoke premium door option for luxury homes and design-led projects that want tailored detailing at every level.", ["Luxury home focused", "Bespoke fabrication", "Tailored hardware and finishes", "High-end entry presentation", "Architect collaboration ready", "Unique visual identity"])
+                        typeSection("CD - 01", "Customized Door System", "Door/Custom Doors.png", "A tailor-made door system designed for unique architectural requirements, combining functionality with design flexibility.", ["Frame depth: 50 mm - 150 mm (customized)", "Locking type: As per design (smart locks / multipoint / magnetic)", "Glass range: 5 mm - 40 mm", "Design options: Sliding / hinged / pivot / mixed systems", "Sealing: Custom gasket / brush / silicone", "Max height: Up to 3500 mm (depending on design)", "Hardware: Premium / designer hardware solutions"])
                     ]
                 })
             }
@@ -605,94 +593,120 @@ document.addEventListener("DOMContentLoaded", function () {
             label: "Blinds",
             pageUrl: "blinds.html",
             items: {
-                "roller-blinds": itemConfig({
-                    title: "Roller Blinds",
+                "skylight-roman-blinds": itemConfig({
+                    title: "SKYLIGHT Roman blinds",
                     tagline: "Product Detail",
-                    intro: "The inner page is now rebuilt in a catalogue-style format so users can compare practical blind types instead of reading only a short overview.",
-                    overviewTitle: "Roller Blind Collection",
-                    overviewSummary: "Roller blinds deliver a neat, minimal, and highly practical solution for privacy and daylight control across residential, office, and retail interiors.",
+                    intro: "A fabric-based folding blind system designed specifically for skylights, offering soft aesthetics with controlled daylight and heat reduction.",
+                    overviewTitle: "SKYLIGHT Roman blinds",
+                    overviewSummary: "Skylight roman blinds are ideal for roof windows and inclined glazing where elegant fabric presentation, shading control, and reduced solar gain are important.",
                     overviewImage: "assets/img/window/01.jpg",
-                    overviewPoints: ["Simple and modern blind presentation", "Good for privacy and filtered daylight", "Available in sunscreen and blackout styles", "Suitable for residential and office interiors"],
-                    sourceNote: "Blinds pages use Windzon-authored content in the new product-sheet layout to keep the site consistent.",
+                    overviewPoints: ["System type: Manual / Motorized Roman blind", "Fabric options: Blackout / translucent / sunscreen fabrics", "Light control: Partial to full blackout", "Max size: 1500 mm x 2000 mm"],
+                    sourceNote: "Blinds pages are updated to keep only the three selected blind options in the same product-detail layout.",
                     types: [
-                        typeSection("RB - Screen", "Sunscreen Roller Blind", "assets/img/window/01.jpg", "A screen-oriented roller blind for spaces that want filtered daylight and daytime privacy with a cleaner office-friendly look.", ["Soft daylight filtering", "Suitable for offices and lounges", "Clean minimal appearance", "Good for screen-facing spaces", "Easy operation", "Modern texture options"]),
-                        typeSection("RB - Blackout", "Blackout Roller Blind", "assets/img/window/01.jpg", "A blackout roller blind for bedrooms and media spaces where stronger light blockage and privacy are important.", ["High privacy control", "Better room darkening", "Ideal for bedrooms", "Simple contemporary appearance", "Comfort-led choice", "Multiple fabric options"]),
-                        typeSection("RB - Premium", "Premium Designer Roller", "assets/img/window/01.jpg", "A more premium roller format with richer fabric choice and a refined fit for designer interiors.", ["Enhanced fabric styling", "Premium interior appeal", "Suitable for upscale homes", "Clean cassette presentation", "Soft luxury look", "Custom size fabrication"])
+                        typeSection(
+                            "SB - 01",
+                            "SKYLIGHT Roman blinds",
+                            "assets/img/window/01.jpg",
+                            "A fabric-based folding blind system designed specifically for skylights, offering soft aesthetics with controlled daylight and heat reduction.",
+                            [
+                                "System type: Manual / Motorized Roman blind",
+                                "Fabric options: Blackout / translucent / sunscreen fabrics",
+                                "Fabric GSM: 200 - 400 GSM",
+                                "Operation: Chain drive / motorized (remote or smart control)",
+                                "Frame compatibility: Aluminium / uPVC skylight frames",
+                                "Mounting: Top-mounted with side guide wires / channels",
+                                "Light control: Partial to full blackout",
+                                "Max size: 1500 mm x 2000 mm",
+                                "Sealing: Fabric overlap with side guides",
+                                "Hardware: Roller tubes, cords, motor (Somfy / Dooya optional)"
+                            ]
+                        )
                     ]
                 }),
-                "vertical-blinds": itemConfig({
-                    title: "Vertical Blinds",
+                "skylight-blinds": itemConfig({
+                    title: "SKYLIGHT BLINDS",
                     tagline: "Product Detail",
-                    intro: "This detail page compares vertical blind styles in a cleaner product-sheet format suited to the rest of the website.",
-                    overviewTitle: "Vertical Blind Collection",
-                    overviewSummary: "Vertical blinds are ideal for broader openings and work especially well in offices, large glazed spaces, and sliding door areas where directional light control matters.",
+                    intro: "A high-performance blind system designed for horizontal or inclined glazing, ensuring stable operation even on sloped roofs.",
+                    overviewTitle: "SKYLIGHT BLINDS",
+                    overviewSummary: "Skylight blind systems are designed for roof and inclined glazing applications where controlled operation, blackout capability, and stable guided movement are important.",
                     overviewImage: "assets/img/window/01.jpg",
-                    overviewPoints: ["Strong fit for wider openings", "Adjustable daylight direction", "Office-friendly and easy to maintain", "Professional and clean visual language"],
-                    sourceNote: "This content is custom-built for Windzon’s website using the new inner page style.",
+                    overviewPoints: ["Designed for horizontal or inclined glazing", "Supports tensioned and roller configurations", "Stable operation on sloped roofs", "High blackout and glare control performance"],
+                    sourceNote: "Blinds pages are updated to keep only the three selected blind options in the same product-detail layout.",
                     types: [
-                        typeSection("VB - Office", "Office Vertical Blind", "assets/img/window/01.jpg", "A practical vertical blind setup for professional interiors and workspaces needing easy light management.", ["Best for offices", "Directional daylight adjustment", "Neat stack-back", "Professional clean look", "Good for larger windows", "Simple maintenance"]),
-                        typeSection("VB - Home", "Residential Vertical Blind", "assets/img/window/01.jpg", "A softer vertical blind variation for homes with large glazing or patio-connected windows.", ["Good for broad home openings", "Balanced privacy control", "Soft designer finish options", "Suitable for living rooms", "Easy track operation", "Modern family homes"]),
-                        typeSection("VB - Premium", "Premium Vertical Series", "assets/img/window/01.jpg", "A higher-end vertical blind style for premium commercial and designer interiors.", ["Premium fabric textures", "Commercial and designer fit", "Wider opening suitability", "Improved visual finish", "Elegant operation", "Custom vane styling"])
+                        typeSection(
+                            "SB - 02",
+                            "Tensioned Skylight Blind (Zip / Cable Guided)",
+                            "assets/img/window/01.jpg",
+                            "A high-performance tensioned skylight blind system designed for horizontal or inclined glazing where guided movement and strong blackout performance are essential.",
+                            [
+                                "System type: Tension-controlled (spring / motorized)",
+                                "Fabric: Blackout / screen / reflective",
+                                "Guide system: Side channels / SS cable guide",
+                                "Operation: Motorized (recommended)",
+                                "Glass compatibility: Skylight / roof glazing",
+                                "Light control: 90% - 100% blackout",
+                                "Max size: 2000 mm x 3000 mm",
+                                "Wind resistance: High (zip system)",
+                                "Hardware: Tubular motor, guide channels"
+                            ]
+                        ),
+                        typeSection(
+                            "SB - 03",
+                            "Skylight Roller Blind",
+                            "assets/img/window/01.jpg",
+                            "A roller-based skylight blind solution for inclined or overhead glazing where simple operation and effective residential shading are needed.",
+                            [
+                                "System type: Roller mechanism",
+                                "Operation: Manual / motorized",
+                                "Fabric range: 180 - 350 GSM",
+                                "Mounting: Top / inside frame",
+                                "Max size: 1800 mm x 2500 mm",
+                                "Sealing: Side channels optional",
+                                "Application: Residential skylights"
+                            ]
+                        )
                     ]
                 }),
-                "venetian-blinds": itemConfig({
-                    title: "Venetian Blinds",
+                "dgu-blinds": itemConfig({
+                    title: "DGU BLINDS",
                     tagline: "Product Detail",
-                    intro: "The Venetian blind page is presented in the same type-based catalogue flow, making selection easier for both practical and style-led projects.",
-                    overviewTitle: "Venetian Blind Collection",
-                    overviewSummary: "Venetian blinds offer precise light control and a smart structured appearance. They are suited to kitchens, study rooms, offices, and minimal modern interiors.",
+                    intro: "A sealed blind system integrated within double-glazed glass units, offering dust-free operation, enhanced insulation, and zero maintenance.",
+                    overviewTitle: "DGU BLINDS",
+                    overviewSummary: "DGU blinds are integrated inside insulated glazing units to provide clean low-maintenance shading, better insulation, and protected internal blind operation.",
                     overviewImage: "assets/img/window/01.jpg",
-                    overviewPoints: ["Precise light adjustment", "Clean structured visual language", "Ideal for offices and utility-oriented interiors", "Easy to coordinate with modern design"],
-                    sourceNote: "This content is original to Windzon and arranged in a catalogue-style comparison layout.",
+                    overviewPoints: ["Sealed blind system within double-glazed units", "Dust-free operation and zero maintenance", "Improved insulation and clean appearance", "Supports venetian and fabric blind formats"],
+                    sourceNote: "Blinds pages are updated to keep only the three selected blind options in the same product-detail layout.",
                     types: [
-                        typeSection("VB - Classic", "Classic Venetian Blind", "assets/img/window/01.jpg", "A dependable venetian blind style for crisp light control and everyday practicality.", ["Horizontal slat control", "Good for offices and studies", "Structured clean look", "Reliable daily use", "Simple tilt and raise control", "Easy to match interiors"]),
-                        typeSection("VB - Luxe", "Premium Venetian Series", "assets/img/window/01.jpg", "A more refined venetian blind type for premium interiors wanting stronger visual finish and control.", ["Premium slat finish", "Better designer appeal", "Precise daylight control", "Suitable for high-end interiors", "Custom styling flexibility", "Strong modern character"]),
-                        typeSection("VB - Utility", "Utility Venetian Blind", "assets/img/window/01.jpg", "A practical venetian format for utility, kitchen, and service spaces requiring easy adjustment and maintenance.", ["Kitchen-friendly styling", "Easy wipe-clean use", "Strong practical fit", "Light control focus", "Compact operation", "Suitable for daily-use spaces"])
-                    ]
-                }),
-                "zebra-blinds": itemConfig({
-                    title: "Zebra Blinds",
-                    tagline: "Product Detail",
-                    intro: "The zebra blind inner page now follows the same comparison-first structure to help clients understand the look and function of layered blind options.",
-                    overviewTitle: "Zebra Blind Collection",
-                    overviewSummary: "Zebra blinds combine sheer and solid fabric bands to create a modern layered daylight effect that is especially popular in bedrooms, lounges, and premium homes.",
-                    overviewImage: "assets/img/window/01.jpg",
-                    overviewPoints: ["Modern layered day-and-night look", "Excellent for soft filtered daylight", "Decorative premium interior effect", "Popular in living rooms and bedrooms"],
-                    sourceNote: "This layout and content are uniquely restyled for Windzon.",
-                    types: [
-                        typeSection("ZB - Soft", "Soft Daylight Zebra Blind", "assets/img/window/01.jpg", "A soft layered blind for living spaces that want gentle light filtering and decorative privacy control.", ["Soft filtered daylight", "Decorative layered fabric", "Good for living rooms", "Premium residential look", "Elegant modern design", "Comfort-led use"]),
-                        typeSection("ZB - Private", "Privacy Zebra Blind", "assets/img/window/01.jpg", "A stronger privacy-oriented zebra blind for bedrooms and premium apartments.", ["Better privacy layering", "Bedroom-friendly look", "Modern visual softness", "Decorative fabric finish", "Suitable for premium apartments", "Easy alignment control"]),
-                        typeSection("ZB - Designer", "Designer Zebra Series", "assets/img/window/01.jpg", "A richer zebra blind style for clients wanting a more refined and decorative modern window treatment.", ["Designer interior fit", "Luxury fabric selection", "Premium appearance", "Soft modern daylight control", "High-end residential use", "Custom shade palette"])
-                    ]
-                }),
-                "roman-blinds": itemConfig({
-                    title: "Roman Blinds",
-                    tagline: "Product Detail",
-                    intro: "Roman blinds are now presented in a more premium product-sheet style with type-led comparison and better visual storytelling.",
-                    overviewTitle: "Roman Blind Collection",
-                    overviewSummary: "Roman blinds bring softness, texture, and tailored elegance to bedrooms, lounges, boutiques, and premium residential interiors.",
-                    overviewImage: "assets/img/window/01.jpg",
-                    overviewPoints: ["Soft fabric-led premium look", "Ideal for bedrooms and lounges", "Strong decorative interior value", "Tailored folded presentation when raised"],
-                    sourceNote: "This product content is written specifically for Windzon and follows the new detail page structure.",
-                    types: [
-                        typeSection("RBM - Soft", "Soft Roman Blind", "assets/img/window/01.jpg", "A calm fabric-led roman blind for bedrooms and intimate interior spaces.", ["Soft folded fabric appearance", "Ideal for bedrooms", "Decorative and warm", "Premium home styling", "Comfort-focused selection", "Fabric texture variety"]),
-                        typeSection("RBM - Lounge", "Lounge Roman Blind", "assets/img/window/01.jpg", "A richer roman blind option for living areas, lounges, and refined interior schemes.", ["Good for lounge and living rooms", "Elegant folded finish", "Tailored designer appeal", "Coordinates with premium interiors", "Softens the room visually", "Custom pattern options"]),
-                        typeSection("RBM - Boutique", "Boutique Roman Series", "assets/img/window/01.jpg", "A more decorative roman blind type suited to boutique-style homes and hospitality interiors.", ["Boutique premium finish", "Decorative styling", "Luxury design use", "Fabric-rich presentation", "High-end fit-out friendly", "Custom colour stories"])
-                    ]
-                }),
-                "motorized-blinds": itemConfig({
-                    title: "Motorized Blinds",
-                    tagline: "Product Detail",
-                    intro: "The motorized blind page now reads like a solution sheet, with type blocks focused on automation, convenience, and premium use cases.",
-                    overviewTitle: "Motorized Blind Collection",
-                    overviewSummary: "Motorized blinds are ideal for smart homes, large glazed openings, premium residences, and modern office spaces where convenience and automation matter.",
-                    overviewImage: "assets/img/window/01.jpg",
-                    overviewPoints: ["Effortless motor-driven operation", "Ideal for smart homes and premium offices", "Good for wide glazing and premium interiors", "Supports modern automation-led living"],
-                    sourceNote: "Motorized blind content is custom written for Windzon while keeping the new catalogue-style experience consistent.",
-                    types: [
-                        typeSection("MB - Remote", "Remote Control Blind", "assets/img/window/01.jpg", "A motorized blind style built for convenient remote operation in everyday residential and office spaces.", ["Remote-based control", "Good for living rooms and offices", "Convenient daily use", "Suitable for wider openings", "Modern premium look", "Smooth movement intent"]),
-                        typeSection("MB - Smart", "Smart Home Blind", "assets/img/window/01.jpg", "A connected blind type suited to automation-focused homes and high-end interiors.", ["Smart-home ready concept", "Ideal for premium homes", "Automation-focused use", "Suitable for designer interiors", "Convenient hands-free feel", "Modern technology-led positioning"]),
-                        typeSection("MB - Signature", "Signature Motorized Series", "assets/img/window/01.jpg", "A premium motorized blind solution for top-tier residential and commercial design projects.", ["Luxury automation appeal", "Premium wide-glass suitability", "High-end interior fit", "Strong user convenience", "Designer project ready", "Elevated modern experience"])
+                        typeSection(
+                            "DGU - 01",
+                            "Venetian Blinds (Inside Glass)",
+                            "assets/img/window/01.jpg",
+                            "An aluminium venetian blind system sealed inside a DGU configuration for adjustable light control and protected dust-free operation.",
+                            [
+                                "System type: Aluminium Venetian blind (inside DGU)",
+                                "Glass configuration: 5 mm + 12-20 mm spacer + 5 mm",
+                                "Slat size: 12 mm - 16 mm",
+                                "Operation: Magnetic slider / motorized",
+                                "Tilt control: Yes (angle adjustment)",
+                                "Light control: Adjustable shading",
+                                "Sealing: Fully sealed unit (argon optional)",
+                                "Max size: 1500 mm x 2500 mm"
+                            ]
+                        ),
+                        typeSection(
+                            "DGU - 02",
+                            "Roller / Pleated Blinds (Inside DGU)",
+                            "assets/img/window/01.jpg",
+                            "A sealed fabric blind system integrated inside double-glazed units for blackout or translucent control with zero maintenance operation.",
+                            [
+                                "System type: Fabric blind inside glass",
+                                "Fabric: Blackout / translucent",
+                                "Operation: Magnetic / motorized",
+                                "Glass thickness: 20 mm - 32 mm DGU",
+                                "Light control: Full blackout possible",
+                                "Maintenance: Zero (dust-free sealed system)"
+                            ]
+                        )
                     ]
                 })
             }
@@ -752,14 +766,15 @@ document.addEventListener("DOMContentLoaded", function () {
     function renderTypeSections(item) {
         setHtml("catalog-type-sections", item.types.map(function (type, index) {
             var reverseClass = index % 2 === 0 ? " catalog-type-block-reverse" : "";
+            var hasMultipleImages = type.images.length > 1;
             var slides = type.images.map(function (imageSrc, imageIndex) {
                 return '<div class="catalog-gallery-slide' + (imageIndex === 0 ? " active" : "") + '">' +
                     '<img src="' + imageSrc + '" alt="' + type.title + " image " + (imageIndex + 1) + '">' +
                 "</div>";
             }).join("");
-            var dots = type.images.map(function (_, imageIndex) {
+            var dots = hasMultipleImages ? type.images.map(function (_, imageIndex) {
                 return '<button type="button" class="catalog-gallery-dot' + (imageIndex === 0 ? " active" : "") + '" data-slide-index="' + imageIndex + '" aria-label="Show image ' + (imageIndex + 1) + '"></button>';
-            }).join("");
+            }).join("") : "";
             return '' +
                 '<section class="catalog-type-block' + reverseClass + '" id="type-section-' + index + '">' +
                     '<div class="catalog-type-card">' +
@@ -769,7 +784,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     '<span class="catalog-type-code">' + type.code + '</span>' +
                                     '<div class="catalog-gallery" data-gallery>' +
                                         '<div class="catalog-gallery-slides">' + slides + '</div>' +
-                                        '<div class="catalog-gallery-dots">' + dots + '</div>' +
+                                        (hasMultipleImages ? '<div class="catalog-gallery-dots">' + dots + '</div>' : '') +
                                     '</div>' +
                                 '</div>' +
                             '</div>' +
