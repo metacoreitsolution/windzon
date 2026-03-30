@@ -400,58 +400,64 @@ document.addEventListener("DOMContentLoaded", function () {
                         )
                     ]
                 }),
-                "slimline-protection-system": itemConfig({
-                    title: "Slimline Protection System",
+                "slimline-window-system": itemConfig({
+                    title: "Slimline Window System",
                     tagline: "Catalogue Detail",
-                    intro: "A modern safety system integrated with windows to provide protection without compromising aesthetics or visibility.",
-                    overviewTitle: "Slimline Protection System",
-                    overviewSummary: "This system is designed for projects that need residential or high-rise safety while preserving a clean visual language and minimal obstruction.",
+                    intro: "A minimal sliding window system with a slim 21 mm leaf profile, large-format glazing support, and concealed detailing for modern architectural openings.",
+                    overviewTitle: "Slimline Window System",
+                    overviewSummary: "Adapted from the KAHI minimal window brochure, this system focuses on nearly frameless aesthetics, high glass visibility, stainless steel sliding performance, and flexible multi-track design possibilities.",
                     overviewImage: "assets/img/window/01.jpg",
                     overviewPoints: [
-                        "Modern safety integration without heavy visual impact",
-                        "Supports aluminium grill, cable, and combined window systems",
-                        "Suitable for residential and high-rise safety use",
-                        "Preserves visibility and aesthetics"
+                        "Minimal 21 mm slimline leaf profile for a nearly frameless look",
+                        "Supports double insulation glazing in aluminium frame profiles",
+                        "Available in 2-track, 3-track, 4-track, and corner-free layouts",
+                        "Concealed drainage, stainless steel rails, and multipoint self locking"
                     ],
-                    sourceNote: "Slimline protection system content is updated from the technical details you provided and rebuilt into Windzon’s catalogue-style layout.",
+                    sourceNote: "Slimline window system content is adapted from the KAHI Alu Systems brochure and reorganized into Windzon’s catalogue-style format.",
                     types: [
                         typeSection(
-                            "SP - 01",
-                            "Slim Aluminium Grill System",
+                            "SLW - 2T",
+                            "2 Track Slimline Window",
                             "assets/img/window/01.jpg",
-                            "A slim aluminium grill system designed for residential safety with clean lines and discreet profile sizes.",
+                            "A clean two-track sliding configuration designed for projects that want a minimalist frame, smooth everyday movement, and maximum daylight with very low visual obstruction.",
                             [
-                                "Profile size: 10 mm - 25 mm",
-                                "Spacing: 100 mm - 150 mm",
-                                "Finish: Powder coated / anodized",
-                                "Mounting: Inside / outside frame fixing",
-                                "Application: Residential safety"
+                                "Leaf sight line: 21 mm",
+                                "Glass thickness: up to 29 mm",
+                                "Max shutter height: 5800 mm",
+                                "Max shutter size: 3600 x 3000 mm",
+                                "Sliding rail: Recessed stainless steel",
+                                "Locking system: Multipoint with self up and down action",
+                                "Mesh solution: External"
                             ]
                         ),
                         typeSection(
-                            "SP - 02",
-                            "Stainless Steel Cable (Invisible Grill)",
+                            "SLW - 3T",
+                            "3 Track Slimline Window",
                             "assets/img/window/01.jpg",
-                            "A low-visibility stainless steel cable protection system designed to preserve views while providing secure high-rise and residential protection.",
+                            "A wider sliding arrangement suited to larger openings, offering better panel stacking flexibility while keeping the outer frame visually reduced and easy to integrate into the floor, ceiling, and walls.",
                             [
-                                "Cable thickness: 2 mm - 3 mm SS wire",
-                                "Spacing: 50 mm - 100 mm",
-                                "Tension system: Anchored frame with tensioners",
-                                "Height limit: Up to 3000 mm",
-                                "Finish: SS natural / coated"
+                                "Frame integration: Rimless profile with 50 mm outer frame dimension",
+                                "Glass proportion: up to 98%",
+                                "Sash hide in track: Yes, all sides",
+                                "Drainage option: Track hide system",
+                                "Roller bearings: Stainless steel - Europe",
+                                "Roller bearing capacity: up to 1000 kg",
+                                "Handle: Stainless steel"
                             ]
                         ),
                         typeSection(
-                            "SP - 03",
-                            "Integrated Window + Grill System",
+                            "SLW - 4T",
+                            "4 Track / Corner-Free Slimline Window",
                             "assets/img/window/01.jpg",
-                            "A combined safety and window solution where the grill is integrated within the frame or attached externally for high-rise protection without compromising design.",
+                            "A premium slimline solution for large openings with 4-track movement, corner-post-free composition, and hidden pocket-wall possibilities for uninterrupted views and stronger indoor-outdoor continuity.",
                             [
-                                "Frame depth: 60 mm - 100 mm",
-                                "Glass range: 5 mm - 24 mm",
-                                "Integration: Grill within frame / external attachment",
-                                "Sealing: Gasket-based system",
-                                "Application: High-rise safety + aesthetics"
+                                "Configuration: 4-track sliding and fixed combinations",
+                                "Corner option: Inside and outside corner solutions without posts",
+                                "Pocket solution: Hidden pocket wall compatible",
+                                "Drainage option: Latent inside system",
+                                "Operation: Self-centring integrated roller carriage",
+                                "Large opening capability: sliding doors up to 4.5 m x 1.8 m",
+                                "Finish options: RAL, anodized, and stainless steel finishes"
                             ]
                         )
                     ]
