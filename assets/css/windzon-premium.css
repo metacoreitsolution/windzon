@@ -1412,3 +1412,12 @@ img {
     left: 14px !important;
   }
 }
+
+/* Footer containers: use horizontal space (overrides .container max-width !important above) */
+.footer-area .footer-widget > .container,
+.footer-area .copyright > .container {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: clamp(32px, 7vw, 120px) !important;
+  padding-right: clamp(32px, 7vw, 120px) !important;
+}
