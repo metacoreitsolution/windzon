@@ -56,9 +56,7 @@
                     </div>
                     <div class="header-top-right">
                         <div class="header-top-social">
-                            <span>Follow Us: </span>
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <?php include __DIR__ . '/includes/partials/header-social.php'; ?>
                         </div>
                     </div>
                 </div>
@@ -67,7 +65,7 @@
         <div class="main-navigation">
             <nav class="navbar navbar-expand-lg">
                 <div class="container custom-nav position-relative">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                         <img src="assets/img/logo.png" alt="logo">
                     </a>
                     <div class="mobile-menu-right">
@@ -80,25 +78,25 @@
                     </div>
                     <div class="collapse navbar-collapse" id="main_nav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="service.html">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="window.html">Windows</a></li>
-                            <li class="nav-item"><a class="nav-link" href="door.html">Doors</a></li>
-                            <li class="nav-item"><a class="nav-link" href="blinds.html">Blinds</a></li>
-                            <li class="nav-item"><a class="nav-link" href="our-project.html">Our Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                            <li class="nav-item d-lg-none"><a class="nav-link" href="contact.html">Contact us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="service.php">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="window.php">Windows</a></li>
+                            <li class="nav-item"><a class="nav-link" href="door.php">Doors</a></li>
+                            <li class="nav-item"><a class="nav-link" href="blinds.php">Blinds</a></li>
+                            <li class="nav-item"><a class="nav-link" href="our-project.php">Our Projects</a></li>
+                            <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="contact.php">Contact us</a></li>
                         </ul>
                         <div class="nav-right">
                             <div class="nav-right-btn mt-2">
-                                <a href="contact.html" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a>
+                                <a href="contact.php" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                     <!-- search area -->
                     <div class="search-area">
-                        <form action="blog.html" method="get">
+                        <form action="blog.php" method="get">
                             <div class="form-group">
                                 <input type="text" name="s" class="form-control" placeholder="Search...">
                                 <button type="submit" class="search-icon-btn"><i class="far fa-search"></i></button>
@@ -120,7 +118,7 @@
             <div class="container">
                 <h2 class="breadcrumb-title">Services</h2>
                 <ul class="breadcrumb-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li class="active">Services</li>
                 </ul>
             </div>
@@ -151,13 +149,13 @@
                             </div>
                             <div class="service-content">
                                 <h3 class="service-title">
-                                    <a href="window.html">Aluminium Window Installation</a>
+                                    <a href="window.php">Aluminium Window Installation</a>
                                 </h3>
                                 <p class="service-text">
                                     Professional installation of sliding, casement, and fixed aluminium windows with precision fitting, weather sealing, and energy-efficient glazing options for homes and offices.
                                 </p>
                                 <div class="service-arrow">
-                                    <a href="window.html" class="theme-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <a href="window.php" class="theme-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -172,13 +170,13 @@
                             </div>
                             <div class="service-content">
                                 <h3 class="service-title">
-                                    <a href="door.html">Aluminium Door Systems</a>
+                                    <a href="door.php">Aluminium Door Systems</a>
                                 </h3>
                                 <p class="service-text">
                                     Premium sliding, folding, and hinged aluminium doors with multi-point locking, smooth operation, and custom finishes for residential and commercial entrances.
                                 </p>
                                 <div class="service-arrow">
-                                    <a href="door.html" class="theme-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <a href="door.php" class="theme-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -193,13 +191,13 @@
                             </div>
                             <div class="service-content">
                                 <h3 class="service-title">
-                                    <a href="service-single.html?service=maintenance">Maintenance & Repair</a>
+                                    <a href="service-single.php?service=maintenance">Maintenance & Repair</a>
                                 </h3>
                                 <p class="service-text">
                                     Expert repair, hardware replacement, and preventive maintenance to extend the life of your aluminium windows and doors. Fast response for urgent issues.
                                 </p>
                                 <div class="service-arrow">
-                                    <a href="service-single.html?service=maintenance" class="theme-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <a href="service-single.php?service=maintenance" class="theme-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -214,13 +212,13 @@
                             </div>
                             <div class="service-content">
                                 <h3 class="service-title">
-                                    <a href="service-single.html?service=accessories">Premium Accessories & Hardware</a>
+                                    <a href="service-single.php?service=accessories">Premium Accessories & Hardware</a>
                                 </h3>
                                 <p class="service-text">
                                     High-quality locks, handles, rollers, hinges, and weather seals from trusted brands. Upgrade or replace components for improved security and performance.
                                 </p>
                                 <div class="service-arrow">
-                                    <a href="service-single.html?service=accessories" class="theme-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <a href="service-single.php?service=accessories" class="theme-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -235,13 +233,13 @@
                             </div>
                             <div class="service-content">
                                 <h3 class="service-title">
-                                    <a href="contact.html">Project Planning & Consultation</a>
+                                    <a href="contact.php">Project Planning & Consultation</a>
                                 </h3>
                                 <p class="service-text">
                                     Free site visits, technical drawings, and project management for new builds and renovations. We coordinate with architects and builders for seamless execution.
                                 </p>
                                 <div class="service-arrow">
-                                    <a href="contact.html" class="theme-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <a href="contact.php" class="theme-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -256,13 +254,13 @@
                             </div>
                             <div class="service-content">
                                 <h3 class="service-title">
-                                    <a href="service-single.html?service=upgrades">System Upgrades & Replacement</a>
+                                    <a href="service-single.php?service=upgrades">System Upgrades & Replacement</a>
                                 </h3>
                                 <p class="service-text">
                                     Replace outdated windows and doors with modern aluminium systems. Improve insulation, security, and aesthetics while adding value to your property.
                                 </p>
                                 <div class="service-arrow">
-                                    <a href="service-single.html?service=upgrades" class="theme-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    <a href="service-single.php?service=upgrades" class="theme-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -306,13 +304,13 @@
                         <div class="footer-widget-box list">
                             <h4 class="footer-widget-title">Quick Links</h4>
                             <ul class="footer-list">
-                                <li><a href="index.html"><i class="fas fa-caret-right"></i> Home</a></li>
-                                <li><a href="about.html"><i class="fas fa-caret-right"></i> About Us</a></li>
-                                <li><a href="window.html"><i class="fas fa-caret-right"></i> Window</a></li>
-                                <li><a href="door.html"><i class="fas fa-caret-right"></i> Door</a></li>
-                                <li><a href="blinds.html"><i class="fas fa-caret-right"></i> Blinds</a></li>
-                                <li><a href="our-project.html"><i class="fas fa-caret-right"></i> Our Projects</a></li>
-                                <li><a href="contact.html"><i class="fas fa-caret-right"></i> Contact Us</a></li>
+                                <li><a href="index.php"><i class="fas fa-caret-right"></i> Home</a></li>
+                                <li><a href="about.php"><i class="fas fa-caret-right"></i> About Us</a></li>
+                                <li><a href="window.php"><i class="fas fa-caret-right"></i> Window</a></li>
+                                <li><a href="door.php"><i class="fas fa-caret-right"></i> Door</a></li>
+                                <li><a href="blinds.php"><i class="fas fa-caret-right"></i> Blinds</a></li>
+                                <li><a href="our-project.php"><i class="fas fa-caret-right"></i> Our Projects</a></li>
+                                <li><a href="contact.php"><i class="fas fa-caret-right"></i> Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -335,7 +333,7 @@
                                 <span class="footer-cta-label">Next step</span>
                                 <h4 class="footer-cta-title">Start your project</h4>
                                 <p class="footer-cta-text">Site visits, measurements, and tailored quotes for homes and commercial spaces in Rajkot and beyond.</p>
-                                <a href="contact.html" class="theme-btn footer-cta-btn">Free consultation <i class="far fa-arrow-right"></i></a>
+                                <a href="contact.php" class="theme-btn footer-cta-btn">Free consultation <i class="far fa-arrow-right"></i></a>
                                 <div class="footer-cta-accent" aria-hidden="true"></div>
                             </div>
                         </div>
@@ -353,8 +351,7 @@
                     </div>
                     <div class="col-md-6 align-self-center">
                         <ul class="footer-social">
-                            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                            <?php include __DIR__ . '/includes/partials/footer-social-items.php'; ?>
                         </ul>
                     </div>
                 </div>

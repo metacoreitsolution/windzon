@@ -59,9 +59,7 @@
                     </div>
                     <div class="header-top-right">
                         <div class="header-top-social">
-                            <span>Follow Us: </span>
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <?php include __DIR__ . '/includes/partials/header-social.php'; ?>
                         </div>
                     </div>
                 </div>
@@ -70,7 +68,7 @@
         <div class="main-navigation">
             <nav class="navbar navbar-expand-lg">
                 <div class="container custom-nav position-relative">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                         <img src="assets/img/logo.png" alt="logo">
                     </a>
                     <div class="mobile-menu-right">
@@ -84,29 +82,29 @@
                     <div class="collapse navbar-collapse" id="main_nav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" href="index.html">Home</a>
+                                <a class="nav-link active" href="index.php">Home</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="window.html">Windows</a></li>
-                            <li class="nav-item"><a class="nav-link" href="door.html">Doors</a></li>
-                            <li class="nav-item"><a class="nav-link" href="blinds.html">Blinds</a></li>
-                            <li class="nav-item"><a class="nav-link" href="our-project.html">Our Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="service.php">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="window.php">Windows</a></li>
+                            <li class="nav-item"><a class="nav-link" href="door.php">Doors</a></li>
+                            <li class="nav-item"><a class="nav-link" href="blinds.php">Blinds</a></li>
+                            <li class="nav-item"><a class="nav-link" href="our-project.php">Our Projects</a></li>
+                            <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
                             <li class="nav-item d-lg-none">
-                                <a class="nav-link" href="contact.html">Contact us</a>
+                                <a class="nav-link" href="contact.php">Contact us</a>
                             </li>
                         </ul>
                         <div class="nav-right">
 
                             <div class="nav-right-btn mt-2">
-                                <a href="contact.html" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a>
+                                <a href="contact.php" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                     <!-- search area -->
                     <div class="search-area">
-                        <form action="blog.html" method="get">
+                        <form action="blog.php" method="get">
                             <div class="form-group">
                                 <input type="text" name="s" class="form-control" placeholder="Search...">
                                 <button type="submit" class="search-icon-btn"><i class="far fa-search"></i></button>
@@ -149,10 +147,10 @@
                             </p>
 
                             <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
-                                <a href="window.html" class="theme-btn">
+                                <a href="window.php" class="theme-btn">
                                     Explore Windows<i class="fas fa-arrow-right"></i>
                                 </a>
-                                <a href="contact.html" class="theme-btn theme-btn2">
+                                <a href="contact.php" class="theme-btn theme-btn2">
                                     Get Free Consultation<i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -185,10 +183,10 @@
                             </p>
 
                             <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
-                                <a href="door.html" class="theme-btn">
+                                <a href="door.php" class="theme-btn">
                                     Explore Doors<i class="fas fa-arrow-right"></i>
                                 </a>
-                                <a href="contact.html" class="theme-btn theme-btn2">
+                                <a href="contact.php" class="theme-btn theme-btn2">
                                     Request Quote<i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -221,10 +219,10 @@
                             </p>
 
                             <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
-                                <a href="our-project.html" class="theme-btn">
+                                <a href="our-project.php" class="theme-btn">
                                     View Projects<i class="fas fa-arrow-right"></i>
                                 </a>
-                                <a href="contact.html" class="theme-btn theme-btn2">
+                                <a href="contact.php" class="theme-btn theme-btn2">
                                     Book Site Visit<i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -299,7 +297,7 @@
                         </ul>
                     </div>
 
-                    <a href="about.html" class="theme-btn mt-4">
+                    <a href="about.php" class="theme-btn mt-4">
                         Discover More<i class="fas fa-arrow-right"></i>
                     </a>
 
@@ -429,14 +427,14 @@
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">
-                            <a href="window.html">Aluminium Window Installation</a>
+                            <a href="window.php">Aluminium Window Installation</a>
                         </h3>
                         <p class="service-text">
                             Professional installation of sliding, casement, and fixed aluminium 
                             windows designed for durability, energy efficiency, and modern aesthetics.
                         </p>
                         <div class="service-arrow">
-                            <a href="window.html" class="theme-btn">
+                            <a href="window.php" class="theme-btn">
                                 Read More<i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -455,14 +453,14 @@
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">
-                            <a href="door.html">Aluminium Door Systems</a>
+                            <a href="door.php">Aluminium Door Systems</a>
                         </h3>
                         <p class="service-text">
                             Premium sliding, folding, and hinged aluminium doors 
                             offering high security, smooth functionality, and elegant finishing.
                         </p>
                         <div class="service-arrow">
-                            <a href="door.html" class="theme-btn">
+                            <a href="door.php" class="theme-btn">
                                 Read More<i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -481,7 +479,7 @@
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">
-                            <a href="service-single.html?service=maintenance">Maintenance & Repair</a>
+                            <a href="service-single.php?service=maintenance">Maintenance & Repair</a>
                         </h3>
                         <p class="service-text">
                             Reliable repair and maintenance services to ensure 
@@ -489,7 +487,7 @@
                             of your aluminium systems.
                         </p>
                         <div class="service-arrow">
-                            <a href="service-single.html?service=maintenance" class="theme-btn">
+                            <a href="service-single.php?service=maintenance" class="theme-btn">
                                 Read More<i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -500,7 +498,7 @@
         </div>
         <div class="row mt-4 view-all-services-row">
             <div class="col-12 text-center">
-                <a href="service.html" class="theme-btn">View All Services<i class="fas fa-arrow-right"></i></a>
+                <a href="service.php" class="theme-btn">View All Services<i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
@@ -606,7 +604,7 @@
                                         <img src="assets/img/icon/window-10.svg" alt="">
                                     </div>
                                     <div class="window-service-title">
-                                        <a href="product-detail.html?category=windows&item=casement-windows">Casement Windows</a>
+                                        <a href="product-detail.php?category=windows&item=casement-windows">Casement Windows</a>
                                     </div>
                                 </div>
                             </div>
@@ -617,7 +615,7 @@
                                         <img src="assets/img/icon/window-6.svg" alt="">
                                     </div>
                                     <div class="window-service-title">
-                                        <a href="product-detail.html?category=windows&item=sliding-windows">Sliding Windows</a>
+                                        <a href="product-detail.php?category=windows&item=sliding-windows">Sliding Windows</a>
                                     </div>
                                 </div>
                             </div>
@@ -628,7 +626,7 @@
                                         <img src="assets/img/icon/window-9.svg" alt="">
                                     </div>
                                     <div class="window-service-title">
-                                        <a href="product-detail.html?category=windows&item=fixed-windows">Fixed Windows</a>
+                                        <a href="product-detail.php?category=windows&item=fixed-windows">Fixed Windows</a>
                                     </div>
                                 </div>
                             </div>
@@ -639,7 +637,7 @@
                                         <img src="assets/img/icon/window-7.svg" alt="">
                                     </div>
                                     <div class="window-service-title">
-                                        <a href="product-detail.html?category=windows&item=top-hung-windows">Top Hung Windows</a>
+                                        <a href="product-detail.php?category=windows&item=top-hung-windows">Top Hung Windows</a>
                                     </div>
                                 </div>
                             </div>
@@ -650,7 +648,7 @@
                                         <img src="assets/img/icon/window-11.svg" alt="">
                                     </div>
                                     <div class="window-service-title">
-                                        <a href="product-detail.html?category=windows&item=bay-bow-windows">Bay & Bow Windows</a>
+                                        <a href="product-detail.php?category=windows&item=bay-bow-windows">Bay & Bow Windows</a>
                                     </div>
                                 </div>
                             </div>
@@ -661,7 +659,7 @@
                                         <img src="assets/img/icon/window-8.svg" alt="">
                                     </div>
                                     <div class="window-service-title">
-                                        <a href="product-detail.html?category=windows&item=sash-windows">Sash Windows</a>
+                                        <a href="product-detail.php?category=windows&item=sash-windows">Sash Windows</a>
                                     </div>
                                 </div>
                             </div>
@@ -672,7 +670,7 @@
                                         <img src="assets/img/icon/window-10.svg" alt="">
                                     </div>
                                     <div class="window-service-title">
-                                        <a href="product-detail.html?category=windows&item=slimline-window-system">Slimline Window System</a>
+                                        <a href="product-detail.php?category=windows&item=slimline-window-system">Slimline Window System</a>
                                     </div>
                                 </div>
                             </div>
@@ -683,7 +681,7 @@
                                         <img src="assets/img/icon/window-6.svg" alt="">
                                     </div>
                                     <div class="window-service-title">
-                                        <a href="product-detail.html?category=windows&item=thermal-windows">Thermal Windows</a>
+                                        <a href="product-detail.php?category=windows&item=thermal-windows">Thermal Windows</a>
                                     </div>
                                 </div>
                             </div>
@@ -734,7 +732,7 @@
                                         <img src="assets/img/icon/door-3.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=doors&item=sliding-doors">Sliding Doors</a>
+                                        <a href="product-detail.php?category=doors&item=sliding-doors">Sliding Doors</a>
                                     </div>
                                 </div>
                             </div>
@@ -745,7 +743,7 @@
                                         <img src="assets/img/icon/door-2.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=doors&item=hinged-doors">Hinged Doors</a>
+                                        <a href="product-detail.php?category=doors&item=hinged-doors">Hinged Doors</a>
                                     </div>
                                 </div>
                             </div>
@@ -756,7 +754,7 @@
                                         <img src="assets/img/icon/door-1.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=doors&item=fixed-glass-doors">Fixed Glass Doors</a>
+                                        <a href="product-detail.php?category=doors&item=fixed-glass-doors">Fixed Glass Doors</a>
                                     </div>
                                 </div>
                             </div>
@@ -767,7 +765,7 @@
                                         <img src="assets/img/icon/door-5.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=doors&item=folding-doors">Folding Doors</a>
+                                        <a href="product-detail.php?category=doors&item=folding-doors">Folding Doors</a>
                                     </div>
                                 </div>
                             </div>
@@ -778,7 +776,7 @@
                                         <img src="assets/img/icon/door-6.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=doors&item=french-doors">French Doors</a>
+                                        <a href="product-detail.php?category=doors&item=french-doors">French Doors</a>
                                     </div>
                                 </div>
                             </div>
@@ -789,7 +787,7 @@
                                         <img src="assets/img/icon/door-4.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=doors&item=customized-doors">Customized Doors</a>
+                                        <a href="product-detail.php?category=doors&item=customized-doors">Customized Doors</a>
                                     </div>
                                 </div>
                             </div>
@@ -856,7 +854,7 @@
                                         <img src="assets/img/icon/window-4.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=blinds&item=skylight-roman-blinds">SKYLIGHT Roman blinds</a>
+                                        <a href="product-detail.php?category=blinds&item=skylight-roman-blinds">SKYLIGHT Roman blinds</a>
                                     </div>
                                 </div>
                             </div>
@@ -867,7 +865,7 @@
                                         <img src="assets/img/icon/window-5.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=blinds&item=skylight-blinds">SKYLIGHT BLINDS</a>
+                                        <a href="product-detail.php?category=blinds&item=skylight-blinds">SKYLIGHT BLINDS</a>
                                     </div>
                                 </div>
                             </div>
@@ -878,7 +876,7 @@
                                         <img src="assets/img/icon/window-6.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=blinds&item=dgu-blinds">DGU BLINDS</a>
+                                        <a href="product-detail.php?category=blinds&item=dgu-blinds">DGU BLINDS</a>
                                     </div>
                                 </div>
                             </div>
@@ -910,16 +908,16 @@
                                     <h6>Get Free Quote</h6>
                                     <h2>Do You Have Any Questions?</h2>
                                 </div>
-                                <form action="thank-you.html" method="get" id="quote-form">
+                                <form method="post" action="assets/php/quote.php" id="quote-form" data-redirect="thank-you.php">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="name" class="form-control" placeholder="Your Name">
+                                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="email" name="email" class="form-control" placeholder="Email Address">
+                                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -944,7 +942,10 @@
                                     <div class="form-group">
                                         <textarea name="message" class="form-control" placeholder="Type Message" rows="4"></textarea>
                                     </div>
-                                    <button class="theme-btn">Submit Now<i class="far fa-arrow-right"></i></button>
+                                    <button type="submit" class="theme-btn">
+                                        <span class="quote-btn-label">Submit Now<i class="far fa-arrow-right"></i></span>
+                                    </button>
+                                    <div class="form-messege mt-3" role="status" aria-live="polite"></div>
                                 </form>
                             </div>
                         </div>
@@ -972,7 +973,7 @@
                                 <a href="tel:+918000800052" class="cta-number cta-number-secondary">+91 80008 00052</a>
                             </div>
                             <div class="cta-btn">
-                                <a href="contact.html" class="theme-btn theme-btn2">Contact Us Now<i class="fas fa-arrow-right"></i></a>
+                                <a href="contact.php" class="theme-btn theme-btn2">Contact Us Now<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1220,10 +1221,10 @@
                                     </ul>
                                 </div>
                                 <h4 class="blog-title">
-                                    <a href="blog-single.html">Choosing the Right Aluminium Windows for Your Home</a>
+                                    <a href="blog-single.php">Choosing the Right Aluminium Windows for Your Home</a>
                                 </h4>
                                 <p>Discover how to select the perfect aluminium window system based on your climate, style preferences, and energy efficiency needs.</p>
-                                <a class="theme-btn" href="blog-single.html">Read More<i class="fas fa-arrow-right"></i></a>
+                                <a class="theme-btn" href="blog-single.php">Read More<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1240,10 +1241,10 @@
                                     </ul>
                                 </div>
                                 <h4 class="blog-title">
-                                    <a href="blog-single.html">Sliding vs Casement: Which Aluminium Door Suits Your Space?</a>
+                                    <a href="blog-single.php">Sliding vs Casement: Which Aluminium Door Suits Your Space?</a>
                                 </h4>
                                 <p>Compare sliding and casement aluminium doors to find the best fit for your home's layout, ventilation needs, and aesthetic goals.</p>
-                                <a class="theme-btn" href="blog-single.html">Read More<i class="fas fa-arrow-right"></i></a>
+                                <a class="theme-btn" href="blog-single.php">Read More<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1260,10 +1261,10 @@
                                     </ul>
                                 </div>
                                 <h4 class="blog-title">
-                                    <a href="blog-single.html">Energy Efficiency: How Aluminium Windows Reduce Your Bills</a>
+                                    <a href="blog-single.php">Energy Efficiency: How Aluminium Windows Reduce Your Bills</a>
                                 </h4>
                                 <p>Learn how modern aluminium windows with thermal breaks and double glazing can lower energy costs and improve comfort year-round.</p>
-                                <a class="theme-btn" href="blog-single.html">Read More<i class="fas fa-arrow-right"></i></a>
+                                <a class="theme-btn" href="blog-single.php">Read More<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1307,13 +1308,13 @@
                         <div class="footer-widget-box list">
                             <h4 class="footer-widget-title">Quick Links</h4>
                             <ul class="footer-list">
-                                <li><a href="index.html"><i class="fas fa-caret-right"></i> Home</a></li>
-                                <li><a href="about.html"><i class="fas fa-caret-right"></i> About Us</a></li>
-                                <li><a href="window.html"><i class="fas fa-caret-right"></i> Window</a></li>
-                                <li><a href="door.html"><i class="fas fa-caret-right"></i> Door</a></li>
-                                <li><a href="blinds.html"><i class="fas fa-caret-right"></i> Blinds</a></li>
-                                <li><a href="our-project.html"><i class="fas fa-caret-right"></i> Our Projects</a></li>
-                                <li><a href="contact.html"><i class="fas fa-caret-right"></i> Contact Us</a></li>
+                                <li><a href="index.php"><i class="fas fa-caret-right"></i> Home</a></li>
+                                <li><a href="about.php"><i class="fas fa-caret-right"></i> About Us</a></li>
+                                <li><a href="window.php"><i class="fas fa-caret-right"></i> Window</a></li>
+                                <li><a href="door.php"><i class="fas fa-caret-right"></i> Door</a></li>
+                                <li><a href="blinds.php"><i class="fas fa-caret-right"></i> Blinds</a></li>
+                                <li><a href="our-project.php"><i class="fas fa-caret-right"></i> Our Projects</a></li>
+                                <li><a href="contact.php"><i class="fas fa-caret-right"></i> Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1321,12 +1322,12 @@
                         <div class="footer-widget-box list">
                             <h4 class="footer-widget-title">Our Services</h4>
                             <ul class="footer-list">
-                                <li><a href="window.html"><i class="fas fa-caret-right"></i> Window Installation</a></li>
-                                <li><a href="door.html"><i class="fas fa-caret-right"></i> Door Systems</a></li>
-                                <li><a href="service-single.html?service=maintenance"><i class="fas fa-caret-right"></i> Maintenance & Repair</a></li>
-                                <li><a href="service-single.html?service=accessories"><i class="fas fa-caret-right"></i> Accessories</a></li>
-                                <li><a href="contact.html"><i class="fas fa-caret-right"></i> Project Consultation</a></li>
-                                <li><a href="service.html"><i class="fas fa-caret-right"></i> All Services</a></li>
+                                <li><a href="window.php"><i class="fas fa-caret-right"></i> Window Installation</a></li>
+                                <li><a href="door.php"><i class="fas fa-caret-right"></i> Door Systems</a></li>
+                                <li><a href="service-single.php?service=maintenance"><i class="fas fa-caret-right"></i> Maintenance & Repair</a></li>
+                                <li><a href="service-single.php?service=accessories"><i class="fas fa-caret-right"></i> Accessories</a></li>
+                                <li><a href="contact.php"><i class="fas fa-caret-right"></i> Project Consultation</a></li>
+                                <li><a href="service.php"><i class="fas fa-caret-right"></i> All Services</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1336,7 +1337,7 @@
                                 <span class="footer-cta-label">Next step</span>
                                 <h4 class="footer-cta-title">Start your project</h4>
                                 <p class="footer-cta-text">Site visits, measurements, and tailored quotes for homes and commercial spaces in Rajkot and beyond.</p>
-                                <a href="contact.html" class="theme-btn footer-cta-btn">Free consultation <i class="far fa-arrow-right"></i></a>
+                                <a href="contact.php" class="theme-btn footer-cta-btn">Free consultation <i class="far fa-arrow-right"></i></a>
                                 <div class="footer-cta-accent" aria-hidden="true"></div>
                             </div>
                         </div>
@@ -1354,8 +1355,7 @@
                     </div>
                     <div class="col-md-6 align-self-center">
                         <ul class="footer-social">
-                            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                            <?php include __DIR__ . '/includes/partials/footer-social-items.php'; ?>
                         </ul>
                     </div>
                 </div>
@@ -1382,6 +1382,7 @@
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/counter-up.js"></script>
     <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/quote-form.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>

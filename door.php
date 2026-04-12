@@ -56,9 +56,7 @@
                     </div>
                     <div class="header-top-right">
                         <div class="header-top-social">
-                            <span>Follow Us: </span>
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <?php include __DIR__ . '/includes/partials/header-social.php'; ?>
                         </div>
                     </div>
                 </div>
@@ -67,7 +65,7 @@
         <div class="main-navigation">
             <nav class="navbar navbar-expand-lg">
                 <div class="container custom-nav position-relative">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                         <img src="assets/img/logo.png" alt="logo">
                     </a>
                     <div class="mobile-menu-right">
@@ -80,25 +78,25 @@
                     </div>
                     <div class="collapse navbar-collapse" id="main_nav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="window.html">Windows</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="door.html">Doors</a></li>
-                            <li class="nav-item"><a class="nav-link" href="blinds.html">Blinds</a></li>
-                            <li class="nav-item"><a class="nav-link" href="our-project.html">Our Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                            <li class="nav-item d-lg-none"><a class="nav-link" href="contact.html">Contact us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="service.php">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="window.php">Windows</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="door.php">Doors</a></li>
+                            <li class="nav-item"><a class="nav-link" href="blinds.php">Blinds</a></li>
+                            <li class="nav-item"><a class="nav-link" href="our-project.php">Our Projects</a></li>
+                            <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="contact.php">Contact us</a></li>
                         </ul>
                         <div class="nav-right">
                             <div class="nav-right-btn mt-2">
-                                <a href="contact.html" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a>
+                                <a href="contact.php" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                     <!-- search area -->
                     <div class="search-area">
-                        <form action="blog.html" method="get">
+                        <form action="blog.php" method="get">
                             <div class="form-group">
                                 <input type="text" name="s" class="form-control" placeholder="Search...">
                                 <button type="submit" class="search-icon-btn"><i class="far fa-search"></i></button>
@@ -120,7 +118,7 @@
             <div class="container">
                 <h2 class="breadcrumb-title">Doors</h2>
                 <ul class="breadcrumb-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li class="active">Doors</li>
                 </ul>
             </div>
@@ -223,7 +221,7 @@
                                         <img src="assets/img/icon/door-3.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=doors&item=sliding-doors">Sliding Doors</a>
+                                        <a href="product-detail.php?category=doors&item=sliding-doors">Sliding Doors</a>
                                     </div>
                                 </div>
                             </div>
@@ -235,7 +233,7 @@
                                         <img src="assets/img/icon/door-2.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=doors&item=hinged-doors">Hinged Doors</a>
+                                        <a href="product-detail.php?category=doors&item=hinged-doors">Hinged Doors</a>
                                     </div>
                                 </div>
                             </div>
@@ -247,7 +245,7 @@
                                         <img src="assets/img/icon/door-1.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=doors&item=fixed-glass-doors">Fixed Glass Doors</a>
+                                        <a href="product-detail.php?category=doors&item=fixed-glass-doors">Fixed Glass Doors</a>
                                     </div>
                                 </div>
                             </div>
@@ -259,7 +257,7 @@
                                         <img src="assets/img/icon/door-5.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=doors&item=folding-doors">Folding Doors</a>
+                                        <a href="product-detail.php?category=doors&item=folding-doors">Folding Doors</a>
                                     </div>
                                 </div>
                             </div>
@@ -271,7 +269,7 @@
                                         <img src="assets/img/icon/door-6.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=doors&item=french-doors">French Doors</a>
+                                        <a href="product-detail.php?category=doors&item=french-doors">French Doors</a>
                                     </div>
                                 </div>
                             </div>
@@ -283,7 +281,7 @@
                                         <img src="assets/img/icon/door-4.svg" alt="">
                                     </div>
                                     <div class="door-service-title">
-                                        <a href="product-detail.html?category=doors&item=customized-doors">Customized Doors</a>
+                                        <a href="product-detail.php?category=doors&item=customized-doors">Customized Doors</a>
                                     </div>
                                 </div>
                             </div>
@@ -337,7 +335,7 @@
                         is always ready to assist you.
                     </p>
 
-                    <a href="contact.html" class="theme-btn mt-2">
+                    <a href="contact.php" class="theme-btn mt-2">
                         Have Any Question ?
                     </a>
                 </div>
@@ -471,13 +469,13 @@
                         <div class="footer-widget-box list">
                             <h4 class="footer-widget-title">Quick Links</h4>
                             <ul class="footer-list">
-                                <li><a href="index.html"><i class="fas fa-caret-right"></i> Home</a></li>
-                                <li><a href="about.html"><i class="fas fa-caret-right"></i> About Us</a></li>
-                                <li><a href="window.html"><i class="fas fa-caret-right"></i> Window</a></li>
-                                <li><a href="door.html"><i class="fas fa-caret-right"></i> Door</a></li>
-                                <li><a href="blinds.html"><i class="fas fa-caret-right"></i> Blinds</a></li>
-                                <li><a href="our-project.html"><i class="fas fa-caret-right"></i> Our Projects</a></li>
-                                <li><a href="contact.html"><i class="fas fa-caret-right"></i> Contact Us</a></li>
+                                <li><a href="index.php"><i class="fas fa-caret-right"></i> Home</a></li>
+                                <li><a href="about.php"><i class="fas fa-caret-right"></i> About Us</a></li>
+                                <li><a href="window.php"><i class="fas fa-caret-right"></i> Window</a></li>
+                                <li><a href="door.php"><i class="fas fa-caret-right"></i> Door</a></li>
+                                <li><a href="blinds.php"><i class="fas fa-caret-right"></i> Blinds</a></li>
+                                <li><a href="our-project.php"><i class="fas fa-caret-right"></i> Our Projects</a></li>
+                                <li><a href="contact.php"><i class="fas fa-caret-right"></i> Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -500,7 +498,7 @@
                                 <span class="footer-cta-label">Next step</span>
                                 <h4 class="footer-cta-title">Start your project</h4>
                                 <p class="footer-cta-text">Site visits, measurements, and tailored quotes for homes and commercial spaces in Rajkot and beyond.</p>
-                                <a href="contact.html" class="theme-btn footer-cta-btn">Free consultation <i class="far fa-arrow-right"></i></a>
+                                <a href="contact.php" class="theme-btn footer-cta-btn">Free consultation <i class="far fa-arrow-right"></i></a>
                                 <div class="footer-cta-accent" aria-hidden="true"></div>
                             </div>
                         </div>
@@ -518,8 +516,7 @@
                     </div>
                     <div class="col-md-6 align-self-center">
                         <ul class="footer-social">
-                            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                            <?php include __DIR__ . '/includes/partials/footer-social-items.php'; ?>
                         </ul>
                     </div>
                 </div>

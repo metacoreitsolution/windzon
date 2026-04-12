@@ -56,9 +56,7 @@
                     </div>
                     <div class="header-top-right">
                         <div class="header-top-social">
-                            <span>Follow Us: </span>
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <?php include __DIR__ . '/includes/partials/header-social.php'; ?>
                         </div>
                     </div>
                 </div>
@@ -67,7 +65,7 @@
         <div class="main-navigation">
             <nav class="navbar navbar-expand-lg">
                 <div class="container custom-nav position-relative">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                         <img src="assets/img/logo.png" alt="logo">
                     </a>
                     <div class="mobile-menu-right">
@@ -80,25 +78,25 @@
                     </div>
                     <div class="collapse navbar-collapse" id="main_nav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="window.html">Windows</a></li>
-                            <li class="nav-item"><a class="nav-link" href="door.html">Doors</a></li>
-                            <li class="nav-item"><a class="nav-link" href="blinds.html">Blinds</a></li>
-                            <li class="nav-item"><a class="nav-link" href="our-project.html">Our Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                            <li class="nav-item d-lg-none"><a class="nav-link" href="contact.html">Contact us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="service.php">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="window.php">Windows</a></li>
+                            <li class="nav-item"><a class="nav-link" href="door.php">Doors</a></li>
+                            <li class="nav-item"><a class="nav-link" href="blinds.php">Blinds</a></li>
+                            <li class="nav-item"><a class="nav-link" href="our-project.php">Our Projects</a></li>
+                            <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="contact.php">Contact us</a></li>
                         </ul>
                         <div class="nav-right">
                             <div class="nav-right-btn mt-2">
-                                <a href="contact.html" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a>
+                                <a href="contact.php" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                     <!-- search area -->
                     <div class="search-area">
-                        <form action="blog.html" method="get">
+                        <form action="blog.php" method="get">
                             <div class="form-group">
                                 <input type="text" name="s" class="form-control" placeholder="Search...">
                                 <button type="submit" class="search-icon-btn"><i class="far fa-search"></i></button>
@@ -120,8 +118,8 @@
             <div class="container">
                 <h2 class="breadcrumb-title" id="portfolio-breadcrumb-title">Portfolio Single</h2>
                 <ul class="breadcrumb-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="our-project.html">Our Projects</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="our-project.php">Our Projects</a></li>
                     <li class="active" id="portfolio-breadcrumb-current">Portfolio Single</li>
                 </ul>
             </div>
@@ -171,7 +169,7 @@
                                 </div>
                                 <div class="widget new-portfolio">
                                     <h4>Need Window & Door Repair? We Are Ready To Help You</h4>
-                                    <a href="contact.html" class="new-portfolio-btn">Contact Now<i class="fas fa-arrow-right"></i></a>
+                                    <a href="contact.php" class="new-portfolio-btn">Contact Now<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -255,7 +253,7 @@
                                             bibendum. Sed hendrerit neque nec est suscipit, id faucibus dolor convallis.
                                         </p>
                                     </div>
-                                    <p class="mt-4"><a href="contact.html" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>
+                                    <p class="mt-4"><a href="contact.php" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>
                                     </div>
                                 </div>
                             </div>
@@ -310,13 +308,13 @@
                         <div class="footer-widget-box list">
                             <h4 class="footer-widget-title">Quick Links</h4>
                             <ul class="footer-list">
-                                <li><a href="index.html"><i class="fas fa-caret-right"></i> Home</a></li>
-                                <li><a href="about.html"><i class="fas fa-caret-right"></i> About Us</a></li>
-                                <li><a href="window.html"><i class="fas fa-caret-right"></i> Window</a></li>
-                                <li><a href="door.html"><i class="fas fa-caret-right"></i> Door</a></li>
-                                <li><a href="blinds.html"><i class="fas fa-caret-right"></i> Blinds</a></li>
-                                <li><a href="our-project.html"><i class="fas fa-caret-right"></i> Our Projects</a></li>
-                                <li><a href="contact.html"><i class="fas fa-caret-right"></i> Contact Us</a></li>
+                                <li><a href="index.php"><i class="fas fa-caret-right"></i> Home</a></li>
+                                <li><a href="about.php"><i class="fas fa-caret-right"></i> About Us</a></li>
+                                <li><a href="window.php"><i class="fas fa-caret-right"></i> Window</a></li>
+                                <li><a href="door.php"><i class="fas fa-caret-right"></i> Door</a></li>
+                                <li><a href="blinds.php"><i class="fas fa-caret-right"></i> Blinds</a></li>
+                                <li><a href="our-project.php"><i class="fas fa-caret-right"></i> Our Projects</a></li>
+                                <li><a href="contact.php"><i class="fas fa-caret-right"></i> Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -339,7 +337,7 @@
                                 <span class="footer-cta-label">Next step</span>
                                 <h4 class="footer-cta-title">Start your project</h4>
                                 <p class="footer-cta-text">Site visits, measurements, and tailored quotes for homes and commercial spaces in Rajkot and beyond.</p>
-                                <a href="contact.html" class="theme-btn footer-cta-btn">Free consultation <i class="far fa-arrow-right"></i></a>
+                                <a href="contact.php" class="theme-btn footer-cta-btn">Free consultation <i class="far fa-arrow-right"></i></a>
                                 <div class="footer-cta-accent" aria-hidden="true"></div>
                             </div>
                         </div>
@@ -357,8 +355,7 @@
                     </div>
                     <div class="col-md-6 align-self-center">
                         <ul class="footer-social">
-                            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                            <?php include __DIR__ . '/includes/partials/footer-social-items.php'; ?>
                         </ul>
                     </div>
                 </div>
@@ -394,7 +391,7 @@
                 budget: '$45,000',
                 manager: 'James Wilson',
                 location: 'New York, USA',
-                content: '<p class="mb-20">Our flagship showroom showcases the finest aluminium window and door systems. Featuring premium casement, sliding, and fixed configurations with double-glazed units and thermal break technology. The space demonstrates our commitment to quality and design excellence.</p><p class="mb-20">The showroom includes interactive displays, material samples, and working demonstrations of our locking systems and hardware options. Visitors can experience the smooth operation and superior finish of our aluminium solutions firsthand.</p><div class="row"><div class="col-md-6 mb-20"><img src="assets/img/portfolio/01.jpg" alt="Showroom"></div><div class="col-md-6 mb-20"><img src="assets/img/portfolio/02.jpg" alt="Showroom interior"></div></div><p class="mb-20">Designed for architects, builders, and homeowners, our showroom provides inspiration and expert guidance for residential and commercial projects.</p><div class="my-4"><div class="mb-3"><h3 class="mb-3">Project Highlights</h3><p>Premium aluminium systems, energy-efficient glazing, and professional installation.</p></div><ul class="portfolio-single-list"><li><i class="far fa-check"></i>Premium aluminium profiles</li><li><i class="far fa-check"></i>Double-glazed units</li><li><i class="far fa-check"></i>Thermal break technology</li><li><i class="far fa-check"></i>Multi-point locking systems</li><li><i class="far fa-check"></i>Custom color finishes</li></ul></div><div class="my-4"><h3 class="mb-3">Overview</h3><p>Our showroom represents the pinnacle of aluminium window and door design. Visit us for a personalized consultation and discover how Windzon can transform your space. <a href="contact.html">Schedule a visit</a>.</p></div><p class="mt-4"><a href="contact.html" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>'
+                content: '<p class="mb-20">Our flagship showroom showcases the finest aluminium window and door systems. Featuring premium casement, sliding, and fixed configurations with double-glazed units and thermal break technology. The space demonstrates our commitment to quality and design excellence.</p><p class="mb-20">The showroom includes interactive displays, material samples, and working demonstrations of our locking systems and hardware options. Visitors can experience the smooth operation and superior finish of our aluminium solutions firsthand.</p><div class="row"><div class="col-md-6 mb-20"><img src="assets/img/portfolio/01.jpg" alt="Showroom"></div><div class="col-md-6 mb-20"><img src="assets/img/portfolio/02.jpg" alt="Showroom interior"></div></div><p class="mb-20">Designed for architects, builders, and homeowners, our showroom provides inspiration and expert guidance for residential and commercial projects.</p><div class="my-4"><div class="mb-3"><h3 class="mb-3">Project Highlights</h3><p>Premium aluminium systems, energy-efficient glazing, and professional installation.</p></div><ul class="portfolio-single-list"><li><i class="far fa-check"></i>Premium aluminium profiles</li><li><i class="far fa-check"></i>Double-glazed units</li><li><i class="far fa-check"></i>Thermal break technology</li><li><i class="far fa-check"></i>Multi-point locking systems</li><li><i class="far fa-check"></i>Custom color finishes</li></ul></div><div class="my-4"><h3 class="mb-3">Overview</h3><p>Our showroom represents the pinnacle of aluminium window and door design. Visit us for a personalized consultation and discover how Windzon can transform your space. <a href="contact.php">Schedule a visit</a>.</p></div><p class="mt-4"><a href="contact.php" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>'
             },
             residential: {
                 name: 'Modern Residential Windows',
@@ -405,7 +402,7 @@
                 budget: '$18,500',
                 manager: 'Michael Chen',
                 location: 'Brooklyn, NY',
-                content: '<p class="mb-20">A complete residential window replacement featuring casement and sliding aluminium systems. The project enhanced natural light, improved thermal efficiency, and modernized the home\'s exterior appearance.</p><p class="mb-20">We installed energy-efficient double-glazed units with low-E coating, multi-point locking for security, and powder-coated frames in a custom finish to match the homeowner\'s design preferences.</p><div class="row"><div class="col-md-6 mb-20"><img src="assets/img/portfolio/02.jpg" alt="Residential"></div><div class="col-md-6 mb-20"><img src="assets/img/portfolio/03.jpg" alt="Window detail"></div></div><p class="mb-20">The installation was completed with minimal disruption, and the client reported significant improvements in comfort and energy bills.</p><div class="my-4"><div class="mb-3"><h3 class="mb-3">Project Highlights</h3><p>Residential window replacement with premium aluminium systems.</p></div><ul class="portfolio-single-list"><li><i class="far fa-check"></i>Casement and sliding windows</li><li><i class="far fa-check"></i>Double-glazed low-E units</li><li><i class="far fa-check"></i>Custom frame finishes</li><li><i class="far fa-check"></i>Multi-point locking</li><li><i class="far fa-check"></i>Professional installation</li></ul></div><div class="my-4"><h3 class="mb-3">Overview</h3><p>Transform your home with modern aluminium windows. <a href="contact.html">Get a free consultation</a>.</p></div><p class="mt-4"><a href="contact.html" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>'
+                content: '<p class="mb-20">A complete residential window replacement featuring casement and sliding aluminium systems. The project enhanced natural light, improved thermal efficiency, and modernized the home\'s exterior appearance.</p><p class="mb-20">We installed energy-efficient double-glazed units with low-E coating, multi-point locking for security, and powder-coated frames in a custom finish to match the homeowner\'s design preferences.</p><div class="row"><div class="col-md-6 mb-20"><img src="assets/img/portfolio/02.jpg" alt="Residential"></div><div class="col-md-6 mb-20"><img src="assets/img/portfolio/03.jpg" alt="Window detail"></div></div><p class="mb-20">The installation was completed with minimal disruption, and the client reported significant improvements in comfort and energy bills.</p><div class="my-4"><div class="mb-3"><h3 class="mb-3">Project Highlights</h3><p>Residential window replacement with premium aluminium systems.</p></div><ul class="portfolio-single-list"><li><i class="far fa-check"></i>Casement and sliding windows</li><li><i class="far fa-check"></i>Double-glazed low-E units</li><li><i class="far fa-check"></i>Custom frame finishes</li><li><i class="far fa-check"></i>Multi-point locking</li><li><i class="far fa-check"></i>Professional installation</li></ul></div><div class="my-4"><h3 class="mb-3">Overview</h3><p>Transform your home with modern aluminium windows. <a href="contact.php">Get a free consultation</a>.</p></div><p class="mt-4"><a href="contact.php" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>'
             },
             villa: {
                 name: 'Premium Villa Installation',
@@ -416,7 +413,7 @@
                 budget: '$85,000',
                 manager: 'David Roberts',
                 location: 'Long Island, NY',
-                content: '<p class="mb-20">A comprehensive aluminium window and door installation for a luxury villa. The project included large sliding doors, fixed picture windows, and premium hinged doors with integrated blinds.</p><p class="mb-20">We specified thermally broken aluminium profiles with triple-glazed units for maximum insulation. The expansive glass areas maximize views while maintaining energy efficiency and security.</p><div class="row"><div class="col-md-6 mb-20"><img src="assets/img/portfolio/03.jpg" alt="Villa"></div><div class="col-md-6 mb-20"><img src="assets/img/portfolio/04.jpg" alt="Villa interior"></div></div><p class="mb-20">Custom powder-coated finishes were matched to the villa\'s architectural style. All systems feature premium hardware and weather sealing for long-term performance.</p><div class="my-4"><div class="mb-3"><h3 class="mb-3">Project Highlights</h3><p>Luxury villa with premium aluminium systems.</p></div><ul class="portfolio-single-list"><li><i class="far fa-check"></i>Large sliding doors</li><li><i class="far fa-check"></i>Triple-glazed units</li><li><i class="far fa-check"></i>Thermal break profiles</li><li><i class="far fa-check"></i>Integrated blind options</li><li><i class="far fa-check"></i>Custom finishes</li></ul></div><div class="my-4"><h3 class="mb-3">Overview</h3><p>Premium aluminium solutions for luxury properties. <a href="contact.html">Contact us for your project</a>.</p></div><p class="mt-4"><a href="contact.html" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>'
+                content: '<p class="mb-20">A comprehensive aluminium window and door installation for a luxury villa. The project included large sliding doors, fixed picture windows, and premium hinged doors with integrated blinds.</p><p class="mb-20">We specified thermally broken aluminium profiles with triple-glazed units for maximum insulation. The expansive glass areas maximize views while maintaining energy efficiency and security.</p><div class="row"><div class="col-md-6 mb-20"><img src="assets/img/portfolio/03.jpg" alt="Villa"></div><div class="col-md-6 mb-20"><img src="assets/img/portfolio/04.jpg" alt="Villa interior"></div></div><p class="mb-20">Custom powder-coated finishes were matched to the villa\'s architectural style. All systems feature premium hardware and weather sealing for long-term performance.</p><div class="my-4"><div class="mb-3"><h3 class="mb-3">Project Highlights</h3><p>Luxury villa with premium aluminium systems.</p></div><ul class="portfolio-single-list"><li><i class="far fa-check"></i>Large sliding doors</li><li><i class="far fa-check"></i>Triple-glazed units</li><li><i class="far fa-check"></i>Thermal break profiles</li><li><i class="far fa-check"></i>Integrated blind options</li><li><i class="far fa-check"></i>Custom finishes</li></ul></div><div class="my-4"><h3 class="mb-3">Overview</h3><p>Premium aluminium solutions for luxury properties. <a href="contact.php">Contact us for your project</a>.</p></div><p class="mt-4"><a href="contact.php" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>'
             },
             office: {
                 name: 'Corporate Office Glass System',
@@ -427,7 +424,7 @@
                 budget: '$120,000',
                 manager: 'Emily Foster',
                 location: 'Manhattan, NY',
-                content: '<p class="mb-20">A commercial office fit-out featuring floor-to-ceiling aluminium curtain wall and glass door systems. The design prioritizes natural light, acoustic performance, and modern aesthetics.</p><p class="mb-20">We supplied and installed thermally broken aluminium framing with double-glazed units, automatic door operators, and integrated sun shading. The system meets commercial building codes and energy standards.</p><div class="row"><div class="col-md-6 mb-20"><img src="assets/img/portfolio/04.jpg" alt="Office"></div><div class="col-md-6 mb-20"><img src="assets/img/portfolio/05.jpg" alt="Office interior"></div></div><p class="mb-20">The project was completed on schedule with coordinated delivery and installation. The client reported positive feedback from employees and visitors.</p><div class="my-4"><div class="mb-3"><h3 class="mb-3">Project Highlights</h3><p>Commercial office with aluminium curtain wall and glass systems.</p></div><ul class="portfolio-single-list"><li><i class="far fa-check"></i>Curtain wall system</li><li><i class="far fa-check"></i>Automatic doors</li><li><i class="far fa-check"></i>Acoustic glazing</li><li><i class="far fa-check"></i>Sun shading integration</li><li><i class="far fa-check"></i>Commercial compliance</li></ul></div><div class="my-4"><h3 class="mb-3">Overview</h3><p>Commercial aluminium solutions for offices and workplaces. <a href="contact.html">Discuss your project</a>.</p></div><p class="mt-4"><a href="contact.html" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>'
+                content: '<p class="mb-20">A commercial office fit-out featuring floor-to-ceiling aluminium curtain wall and glass door systems. The design prioritizes natural light, acoustic performance, and modern aesthetics.</p><p class="mb-20">We supplied and installed thermally broken aluminium framing with double-glazed units, automatic door operators, and integrated sun shading. The system meets commercial building codes and energy standards.</p><div class="row"><div class="col-md-6 mb-20"><img src="assets/img/portfolio/04.jpg" alt="Office"></div><div class="col-md-6 mb-20"><img src="assets/img/portfolio/05.jpg" alt="Office interior"></div></div><p class="mb-20">The project was completed on schedule with coordinated delivery and installation. The client reported positive feedback from employees and visitors.</p><div class="my-4"><div class="mb-3"><h3 class="mb-3">Project Highlights</h3><p>Commercial office with aluminium curtain wall and glass systems.</p></div><ul class="portfolio-single-list"><li><i class="far fa-check"></i>Curtain wall system</li><li><i class="far fa-check"></i>Automatic doors</li><li><i class="far fa-check"></i>Acoustic glazing</li><li><i class="far fa-check"></i>Sun shading integration</li><li><i class="far fa-check"></i>Commercial compliance</li></ul></div><div class="my-4"><h3 class="mb-3">Overview</h3><p>Commercial aluminium solutions for offices and workplaces. <a href="contact.php">Discuss your project</a>.</p></div><p class="mt-4"><a href="contact.php" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>'
             },
             cafe: {
                 name: 'Modern Cafe Sliding Doors',
@@ -438,7 +435,7 @@
                 budget: '$22,000',
                 manager: 'Lisa Martinez',
                 location: 'Queens, NY',
-                content: '<p class="mb-20">Sliding aluminium doors for a trendy cafe, creating a seamless indoor-outdoor experience. The wide opening connects the interior with the outdoor seating area while maintaining weather protection when closed.</p><p class="mb-20">We installed multi-panel sliding doors with slim profiles, double-glazed units, and smooth track systems. The doors are easy to operate and provide excellent thermal and acoustic performance.</p><div class="row"><div class="col-md-6 mb-20"><img src="assets/img/portfolio/05.jpg" alt="Cafe"></div><div class="col-md-6 mb-20"><img src="assets/img/portfolio/06.jpg" alt="Cafe doors"></div></div><p class="mb-20">The cafe owner reported increased foot traffic and positive customer feedback. The doors enhance the dining experience in all seasons.</p><div class="my-4"><div class="mb-3"><h3 class="mb-3">Project Highlights</h3><p>Sliding doors for hospitality and retail.</p></div><ul class="portfolio-single-list"><li><i class="far fa-check"></i>Multi-panel sliding system</li><li><i class="far fa-check"></i>Slim aluminium profiles</li><li><i class="far fa-check"></i>Indoor-outdoor flow</li><li><i class="far fa-check"></i>Weather sealing</li><li><i class="far fa-check"></i>Easy operation</li></ul></div><div class="my-4"><h3 class="mb-3">Overview</h3><p>Enhance your hospitality space with aluminium doors. <a href="contact.html">Get a quote</a>.</p></div><p class="mt-4"><a href="contact.html" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>'
+                content: '<p class="mb-20">Sliding aluminium doors for a trendy cafe, creating a seamless indoor-outdoor experience. The wide opening connects the interior with the outdoor seating area while maintaining weather protection when closed.</p><p class="mb-20">We installed multi-panel sliding doors with slim profiles, double-glazed units, and smooth track systems. The doors are easy to operate and provide excellent thermal and acoustic performance.</p><div class="row"><div class="col-md-6 mb-20"><img src="assets/img/portfolio/05.jpg" alt="Cafe"></div><div class="col-md-6 mb-20"><img src="assets/img/portfolio/06.jpg" alt="Cafe doors"></div></div><p class="mb-20">The cafe owner reported increased foot traffic and positive customer feedback. The doors enhance the dining experience in all seasons.</p><div class="my-4"><div class="mb-3"><h3 class="mb-3">Project Highlights</h3><p>Sliding doors for hospitality and retail.</p></div><ul class="portfolio-single-list"><li><i class="far fa-check"></i>Multi-panel sliding system</li><li><i class="far fa-check"></i>Slim aluminium profiles</li><li><i class="far fa-check"></i>Indoor-outdoor flow</li><li><i class="far fa-check"></i>Weather sealing</li><li><i class="far fa-check"></i>Easy operation</li></ul></div><div class="my-4"><h3 class="mb-3">Overview</h3><p>Enhance your hospitality space with aluminium doors. <a href="contact.php">Get a quote</a>.</p></div><p class="mt-4"><a href="contact.php" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>'
             },
             commercial: {
                 name: 'Commercial Complex Installation',
@@ -449,7 +446,7 @@
                 budget: '$250,000',
                 manager: 'Robert Kim',
                 location: 'New Jersey',
-                content: '<p class="mb-20">A mixed-use commercial development featuring aluminium windows and doors across retail, office, and residential units. The project required coordinated design, fabrication, and phased installation.</p><p class="mb-20">We supplied thermally broken aluminium systems in various configurations: casement, sliding, fixed, and hinged doors. All units meet commercial performance standards for security, fire rating, and accessibility.</p><div class="row"><div class="col-md-6 mb-20"><img src="assets/img/portfolio/06.jpg" alt="Commercial"></div><div class="col-md-6 mb-20"><img src="assets/img/portfolio/01.jpg" alt="Commercial detail"></div></div><p class="mb-20">The project was delivered on time and within budget. Our team worked closely with the main contractor to ensure seamless integration with the building envelope.</p><div class="my-4"><div class="mb-3"><h3 class="mb-3">Project Highlights</h3><p>Large-scale commercial aluminium installation.</p></div><ul class="portfolio-single-list"><li><i class="far fa-check"></i>Mixed-use configurations</li><li><i class="far fa-check"></i>Commercial compliance</li><li><i class="far fa-check"></i>Phased installation</li><li><i class="far fa-check"></i>Fire-rated options</li><li><i class="far fa-check"></i>Project management</li></ul></div><div class="my-4"><h3 class="mb-3">Overview</h3><p>Commercial aluminium solutions for large-scale projects. <a href="contact.html">Contact our team</a>.</p></div><p class="mt-4"><a href="contact.html" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>'
+                content: '<p class="mb-20">A mixed-use commercial development featuring aluminium windows and doors across retail, office, and residential units. The project required coordinated design, fabrication, and phased installation.</p><p class="mb-20">We supplied thermally broken aluminium systems in various configurations: casement, sliding, fixed, and hinged doors. All units meet commercial performance standards for security, fire rating, and accessibility.</p><div class="row"><div class="col-md-6 mb-20"><img src="assets/img/portfolio/06.jpg" alt="Commercial"></div><div class="col-md-6 mb-20"><img src="assets/img/portfolio/01.jpg" alt="Commercial detail"></div></div><p class="mb-20">The project was delivered on time and within budget. Our team worked closely with the main contractor to ensure seamless integration with the building envelope.</p><div class="my-4"><div class="mb-3"><h3 class="mb-3">Project Highlights</h3><p>Large-scale commercial aluminium installation.</p></div><ul class="portfolio-single-list"><li><i class="far fa-check"></i>Mixed-use configurations</li><li><i class="far fa-check"></i>Commercial compliance</li><li><i class="far fa-check"></i>Phased installation</li><li><i class="far fa-check"></i>Fire-rated options</li><li><i class="far fa-check"></i>Project management</li></ul></div><div class="my-4"><h3 class="mb-3">Overview</h3><p>Commercial aluminium solutions for large-scale projects. <a href="contact.php">Contact our team</a>.</p></div><p class="mt-4"><a href="contact.php" class="theme-btn">Get A Quote<i class="fas fa-arrow-right"></i></a></p>'
             }
         };
         var defaultProject = {

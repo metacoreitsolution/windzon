@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var productCatalog = {
         windows: {
             label: "Windows",
-            pageUrl: "window.html",
+            pageUrl: "window.php",
             items: {
                 "casement-windows": itemConfig({
                     title: "Casement Windows",
@@ -513,7 +513,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         doors: {
             label: "Doors",
-            pageUrl: "door.html",
+            pageUrl: "door.php",
             items: {
                 "sliding-doors": itemConfig({
                     title: "Sliding Doors",
@@ -597,7 +597,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         blinds: {
             label: "Blinds",
-            pageUrl: "blinds.html",
+            pageUrl: "blinds.php",
             items: {
                 "skylight-roman-blinds": itemConfig({
                     title: "SKYLIGHT Roman blinds",
@@ -839,7 +839,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .filter(function (key) { return key !== itemSlug; })
             .slice(0, 6)
             .map(function (key) {
-                return '<a href="product-detail.html?category=' + current.categorySlug + '&item=' + key + '" class="catalog-related-link">' + category.items[key].title + '<i class="far fa-arrow-right"></i></a>';
+                return '<a href="product-detail.php?category=' + current.categorySlug + '&item=' + key + '" class="catalog-related-link">' + category.items[key].title + '<i class="far fa-arrow-right"></i></a>';
             });
         setHtml("catalog-related-links", related.join(""));
     }

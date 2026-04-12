@@ -695,10 +695,26 @@ img {
 .header-top-social {
   display: flex !important;
   align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 10px 14px !important;
 }
 
 .header-top-social a:last-child {
   margin-right: 0 !important;
+}
+
+/* Brand colours on hover (overrides .header-top-social a:hover theme colour in style.css) */
+.header-top-social .social-link-windzon:hover .fa-facebook {
+  color: #1877f2 !important;
+}
+
+.header-top-social .social-link-windzon:hover .fa-instagram {
+  /* Solid brand tone — gradients + icon fonts often clip poorly across browsers */
+  color: #e4405f !important;
+}
+
+.header-top-social .social-link-windzon:hover .fa-whatsapp {
+  color: #25d366 !important;
 }
 
 .footer-phone-group {
@@ -1420,4 +1436,86 @@ img {
   width: 100% !important;
   padding-left: clamp(32px, 7vw, 120px) !important;
   padding-right: clamp(32px, 7vw, 120px) !important;
+}
+
+/* Form AJAX feedback (contact + quote) */
+.form-messege.success {
+  color: #198754;
+  font-weight: 500;
+}
+.form-messege.error {
+  color: #dc3545;
+  font-weight: 500;
+}
+button.theme-btn:disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+/* Thank you page — spacing, card, readable outline button, footer bar */
+.thank-you-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.thank-you-page .thank-you-main {
+  flex: 1 0 auto;
+  padding-top: clamp(3rem, 10vw, 5.5rem) !important;
+  padding-bottom: clamp(4rem, 12vw, 7rem) !important;
+}
+
+.thank-you-card {
+  background: var(--windzon-white);
+  border-radius: 16px;
+  padding: clamp(2rem, 5vw, 3.25rem);
+  box-shadow: 0 12px 40px rgba(26, 39, 68, 0.09);
+  border: 1px solid rgba(26, 39, 68, 0.07);
+}
+
+.thank-you-page .thank-you-card h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem) !important;
+}
+
+.thank-you-icon i {
+  font-size: clamp(3.5rem, 12vw, 5rem);
+  line-height: 1;
+}
+
+.thank-you-page .thank-you-contact a {
+  color: var(--windzon-accent) !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.thank-you-page .thank-you-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Secondary CTA: premium .theme-btn2 is white-on-outline for dark sections; on thank-you use navy + gold border */
+.thank-you-page .thank-you-btn-outline.theme-btn2 {
+  background: transparent !important;
+  border: 2px solid var(--windzon-accent) !important;
+  color: var(--windzon-navy) !important;
+}
+
+.thank-you-page .thank-you-btn-outline.theme-btn2:hover {
+  background: var(--windzon-accent) !important;
+  color: var(--windzon-white) !important;
+  border-color: var(--windzon-accent) !important;
+}
+
+.thank-you-footer {
+  margin-top: auto;
+}
+
+.thank-you-footer .thank-you-copyright-bar {
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
+.thank-you-footer .copyright-text {
+  color: var(--footer-text-color, #f5faff) !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
 }
