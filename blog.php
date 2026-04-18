@@ -1,3 +1,21 @@
+<?php
+require_once __DIR__ . '/includes/blog_repository.php';
+
+// Get filter and pagination parameters
+$categoryFilter = $_GET['cat'] ?? 'all';
+$currentPage = max(1, (int)($_GET['page'] ?? 1));
+
+// Fetch and filter posts
+$allPosts = mc_all_posts();
+$filteredPosts = mc_filter_posts_by_cat($allPosts, $categoryFilter);
+$totalPosts = count($filteredPosts);
+$totalPages = mc_blog_total_pages($totalPosts);
+$posts = mc_blog_paginate_slice($filteredPosts, $currentPage);
+
+// Get categories for filter tabs
+$categories = mc_blog_fetch_all_categories();
+$dbOk = mc_blog_db_available();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +24,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Latest news, tips, and insights about windows, doors, and blinds from Windzon">
+    <meta name="keywords" content="windows blog, doors blog, aluminium windows, home improvement">
 
     <!-- title -->
-    <title>Windzon - Windows And Doors Service </title>
+    <title>Blog - Windzon Windows And Doors Service</title>
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
@@ -138,149 +156,97 @@
                         </div>
                     </div>
                 </div>
+
+                <?php if (!$dbOk): ?>
+                    <div class="alert alert-warning text-center" role="alert">
+                        <strong>Database not connected.</strong> <?= htmlspecialchars(mc_blog_db_diagnostic_message()) ?>
+                    </div>
+                <?php endif; ?>
+
+                <!-- Category Filter -->
+                <?php if (!empty($categories)): ?>
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="text-center">
+                                <a href="?cat=all" class="btn btn-sm <?= $categoryFilter === 'all' ? 'btn-primary' : 'btn-outline-primary' ?> m-1">All</a>
+                                <?php foreach ($categories as $cat): ?>
+                                    <a href="?cat=<?= urlencode($cat['slug']) ?>" class="btn btn-sm <?= $categoryFilter === $cat['slug'] ? 'btn-primary' : 'btn-outline-primary' ?> m-1">
+                                        <?= htmlspecialchars($cat['label']) ?>
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+                <!-- Blog Posts -->
                 <div class="row">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".25s">
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog/01.jpg" alt="Thumb">
-                            </div>
-                            <div class="blog-item-info">
-                                <div class="blog-item-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
-                                        <li><a href="#"><i class="far fa-calendar-alt"></i> March 14, 2025</a></li>
-                                    </ul>
-                                </div>
-                                <h4 class="blog-title">
-                                    <a href="blog-single.php">Choosing the Right Aluminium Windows for Your Home</a>
-                                </h4>
-                                <p>Discover how to select the perfect aluminium window system based on climate, style, and energy efficiency needs.</p>
-                                <a class="theme-btn" href="blog-single.php">Read More<i class="fas fa-arrow-right"></i></a>
+                    <?php if (empty($posts)): ?>
+                        <div class="col-12">
+                            <div class="text-center py-5">
+                                <i class="far fa-file-alt" style="font-size: 64px; color: #ccc;"></i>
+                                <h3 class="mt-3">No posts yet</h3>
+                                <p class="text-muted">Check back soon for new content!</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".50s">
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog/02.jpg" alt="Thumb">
-                            </div>
-                            <div class="blog-item-info">
-                                <div class="blog-item-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
-                                        <li><a href="#"><i class="far fa-calendar-alt"></i> March 12, 2025</a></li>
-                                    </ul>
+                    <?php else: ?>
+                        <?php foreach ($posts as $index => $post): ?>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="blog-item wow fadeInUp" data-wow-delay="<?= sprintf('.%02ds', ($index % 3 + 1) * 25) ?>">
+                                    <?php if ($post['image_url']): ?>
+                                        <div class="blog-item-img">
+                                            <img src="<?= htmlspecialchars($post['image_url']) ?>" alt="<?= htmlspecialchars($post['image_alt'] ?: $post['title']) ?>">
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="blog-item-info">
+                                        <div class="blog-item-meta">
+                                            <ul>
+                                                <li><a href="#"><i class="far fa-user-circle"></i> By <?= htmlspecialchars($post['author']) ?></a></li>
+                                                <li><a href="#"><i class="far fa-calendar-alt"></i> <?= mc_blog_format_display_date($post['published_at']) ?></a></li>
+                                            </ul>
+                                        </div>
+                                        <h4 class="blog-title">
+                                            <a href="blog-single.php?slug=<?= urlencode($post['slug']) ?>"><?= htmlspecialchars($post['title']) ?></a>
+                                        </h4>
+                                        <p><?= htmlspecialchars($post['excerpt']) ?></p>
+                                        <a class="theme-btn" href="blog-single.php?slug=<?= urlencode($post['slug']) ?>">Read More<i class="fas fa-arrow-right"></i></a>
+                                    </div>
                                 </div>
-                                <h4 class="blog-title">
-                                    <a href="blog-single.php">Sliding vs Casement: Which Aluminium Door Suits Your Space?</a>
-                                </h4>
-                                <p>Compare sliding and casement aluminium doors to find the best fit for your home's layout and ventilation needs.</p>
-                                <a class="theme-btn" href="blog-single.php">Read More<i class="fas fa-arrow-right"></i></a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".75s">
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog/03.jpg" alt="Thumb">
-                            </div>
-                            <div class="blog-item-info">
-                                <div class="blog-item-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
-                                        <li><a href="#"><i class="far fa-calendar-alt"></i> March 10, 2025</a></li>
-                                    </ul>
-                                </div>
-                                <h4 class="blog-title">
-                                    <a href="blog-single.php">Energy Efficiency: How Aluminium Windows Reduce Your Bills</a>
-                                </h4>
-                                <p>Learn how modern aluminium windows with thermal breaks and double glazing can lower energy costs year-round.</p>
-                                <a class="theme-btn" href="blog-single.php">Read More<i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".25s">
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog/01.jpg" alt="Thumb">
-                            </div>
-                            <div class="blog-item-info">
-                                <div class="blog-item-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
-                                        <li><a href="#"><i class="far fa-calendar-alt"></i> March 8, 2025</a></li>
-                                    </ul>
-                                </div>
-                                <h4 class="blog-title">
-                                    <a href="blog-single.php">Maintenance Tips for Aluminium Windows & Doors</a>
-                                </h4>
-                                <p>Keep your aluminium systems in top condition with these simple maintenance practices for longevity.</p>
-                                <a class="theme-btn" href="blog-single.php">Read More<i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".50s">
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog/02.jpg" alt="Thumb">
-                            </div>
-                            <div class="blog-item-info">
-                                <div class="blog-item-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
-                                        <li><a href="#"><i class="far fa-calendar-alt"></i> March 5, 2025</a></li>
-                                    </ul>
-                                </div>
-                                <h4 class="blog-title">
-                                    <a href="blog-single.php">Commercial Aluminium Solutions for Offices</a>
-                                </h4>
-                                <p>How aluminium windows and doors enhance commercial buildings with durability and modern aesthetics.</p>
-                                <a class="theme-btn" href="blog-single.php">Read More<i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".75s">
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog/03.jpg" alt="Thumb">
-                            </div>
-                            <div class="blog-item-info">
-                                <div class="blog-item-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
-                                        <li><a href="#"><i class="far fa-calendar-alt"></i> March 2, 2025</a></li>
-                                    </ul>
-                                </div>
-                                <h4 class="blog-title">
-                                    <a href="blog-single.php">Color Options: Customizing Your Aluminium Finishes</a>
-                                </h4>
-                                <p>Explore powder coating and finish options to match your aluminium windows and doors to your design vision.</p>
-                                <a class="theme-btn" href="blog-single.php">Read More<i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
-                <!-- pagination -->
-                <div class="pagination-area">
-                    <div aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true"><i class="far fa-arrow-left"></i></span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true"><i class="far fa-arrow-right"></i></span>
-                                </a>
-                            </li>
-                        </ul>
+
+                <!-- Pagination -->
+                <?php if ($totalPages > 1): ?>
+                    <div class="pagination-area">
+                        <div aria-label="Page navigation">
+                            <ul class="pagination">
+                                <?php if ($currentPage > 1): ?>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?cat=<?= urlencode($categoryFilter) ?>&page=<?= $currentPage - 1 ?>" aria-label="Previous">
+                                            <span aria-hidden="true"><i class="far fa-arrow-left"></i></span>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+
+                                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                                    <li class="page-item <?= $i === $currentPage ? 'active' : '' ?>">
+                                        <a class="page-link" href="?cat=<?= urlencode($categoryFilter) ?>&page=<?= $i ?>"><?= $i ?></a>
+                                    </li>
+                                <?php endfor; ?>
+
+                                <?php if ($currentPage < $totalPages): ?>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?cat=<?= urlencode($categoryFilter) ?>&page=<?= $currentPage + 1 ?>" aria-label="Next">
+                                            <span aria-hidden="true"><i class="far fa-arrow-right"></i></span>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <!-- pagination end -->
+                <?php endif; ?>
             </div>
         </div>
         <!-- blog area end -->

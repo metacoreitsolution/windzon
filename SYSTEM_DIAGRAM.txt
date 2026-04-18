@@ -1,0 +1,296 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                        WINDZON BLOG SYSTEM ARCHITECTURE                       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              PUBLIC FRONTEND                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    ┌──────────────┐                              ┌──────────────┐
+    │  blog.php    │                              │blog-single   │
+    │              │                              │.php          │
+    │ • Listing    │                              │              │
+    │ • Pagination │◄─────────────────────────────┤ • Full post  │
+    │ • Filtering  │      ?slug=post-title        │ • SEO meta   │
+    │ • 6 per page │                              │ • Author     │
+    └──────┬───────┘                              └──────┬───────┘
+           │                                             │
+           │ require_once                                │ require_once
+           │                                             │
+           └─────────────────┬───────────────────────────┘
+                             │
+                             ▼
+                ┌────────────────────────────┐
+                │ includes/                  │
+                │ blog_repository.php        │
+                │                            │
+                │ • mc_all_posts()           │
+                │ • mc_filter_posts_by_cat() │
+                │ • mc_blog_paginate_slice() │
+                │ • mc_blog_slugify()        │
+                │ • mc_blog_format_date()    │
+                └────────────┬───────────────┘
+                             │
+                             │ require_once
+                             │
+                             ▼
+                ┌────────────────────────────┐
+                │ includes/                  │
+                │ blog_db.php                │
+                │                            │
+                │ • mc_blog_pdo()            │
+                │ • mc_blog_fetch_posts()    │
+                │ • mc_blog_find_by_slug()   │
+                │ • mc_blog_admin_save()     │
+                │ • mc_blog_admin_delete()   │
+                └────────────┬───────────────┘
+                             │
+                             │ reads config
+                             │
+                             ▼
+                ┌────────────────────────────┐
+                │ includes/                  │
+                │ blog_db_config.php         │
+                │                            │
+                │ • DSN                      │
+                │ • Username                 │
+                │ • Password                 │
+                │                            │
+                │ (gitignored)               │
+                └────────────┬───────────────┘
+                             │
+                             │ connects to
+                             │
+                             ▼
+                ┌────────────────────────────┐
+                │      MySQL Database        │
+                │      windzon_blog          │
+                │                            │
+                │ • mc_blog_posts            │
+                │ • mc_blog_categories       │
+                │ • mc_blog_post_categories  │
+                └────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              ADMIN BACKEND                                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    ┌──────────────┐         ┌──────────────┐         ┌──────────────┐
+    │admin/        │         │admin/        │         │admin/        │
+    │login.php     │────────►│panel.php     │◄────────│logout.php    │
+    │              │ success │              │ logout  │              │
+    │ • Password   │         │ • Dashboard  │         │ • Destroy    │
+    │ • Session    │         │ • Posts      │         │   session    │
+    └──────────────┘         │ • Editor     │         └──────────────┘
+                             │ • Categories │
+                             └──────┬───────┘
+                                    │
+                                    │ require_once
+                                    │
+                                    ▼
+                       ┌────────────────────────┐
+                       │ admin/                 │
+                       │ bootstrap.php          │
+                       │                        │
+                       │ • mc_admin_password()  │
+                       │ • mc_admin_is_logged() │
+                       │ • mc_csrf_token()      │
+                       │ • mc_csrf_validate()   │
+                       └────────┬───────────────┘
+                                │
+                                │ reads config
+                                │
+                                ▼
+                       ┌────────────────────────┐
+                       │ admin/                 │
+                       │ config.php             │
+                       │                        │
+                       │ • Admin password       │
+                       │                        │
+                       │ (gitignored)           │
+                       └────────────────────────┘
+
+    ┌──────────────┐                              ┌──────────────┐
+    │admin/        │                              │admin/        │
+    │upload.php    │                              │delete.php    │
+    │              │                              │              │
+    │ • Validate   │                              │ • CSRF check │
+    │ • Save file  │                              │ • Delete row │
+    │ • Return URL │                              │ • Redirect   │
+    └──────┬───────┘                              └──────┬───────┘
+           │                                             │
+           │ saves to                                    │ deletes from
+           │                                             │
+           ▼                                             ▼
+    ┌──────────────┐                         ┌────────────────────┐
+    │uploads/      │                         │ MySQL Database     │
+    │              │                         │ mc_blog_posts      │
+    │ • Images     │                         └────────────────────┘
+    │ • .gitkeep   │
+    └──────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              DATABASE SCHEMA                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    ┌─────────────────────────────────────────────────────────────┐
+    │ mc_blog_posts                                               │
+    ├─────────────────────────────────────────────────────────────┤
+    │ id (PK)                                                     │
+    │ public_id (UNIQUE)                                          │
+    │ slug (UNIQUE) ◄──────────────────────────────┐             │
+    │ title                                        │             │
+    │ excerpt                                      │             │
+    │ body_html                                    │             │
+    │ image_url                                    │             │
+    │ image_alt                                    │             │
+    │ category_label                               │             │
+    │ badge                                        │             │
+    │ accent                                       │             │
+    │ author                                       │             │
+    │ meta_title, meta_description, meta_keywords  │             │
+    │ status (draft/published)                     │             │
+    │ published_at                                 │             │
+    │ created_at, updated_at                       │             │
+    └──────────────┬──────────────────────────────┘             │
+                   │                                             │
+                   │ 1:N                                         │
+                   │                                             │
+                   ▼                                             │
+    ┌──────────────────────────────┐                            │
+    │ mc_blog_post_categories      │                            │
+    ├──────────────────────────────┤                            │
+    │ post_id (FK, PK)             │                            │
+    │ category_id (FK, PK)         │                            │
+    └──────────────┬───────────────┘                            │
+                   │                                             │
+                   │ N:1                                         │
+                   │                                             │
+                   ▼                                             │
+    ┌──────────────────────────────┐                            │
+    │ mc_blog_categories           │                            │
+    ├──────────────────────────────┤                            │
+    │ id (PK)                      │                            │
+    │ slug (UNIQUE)                │                            │
+    │ label                        │                            │
+    └──────────────────────────────┘                            │
+                                                                 │
+                                                                 │
+                                                                 │
+    Used in URL: /blog-single.php?slug=post-title ──────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              SECURITY LAYERS                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    ┌─────────────────────────────────────────────────────────────┐
+    │ Layer 1: Authentication                                     │
+    │ • Session-based login                                       │
+    │ • Password in gitignored config                             │
+    │ • Timing-safe comparison (hash_equals)                      │
+    └─────────────────────────────────────────────────────────────┘
+                                 │
+                                 ▼
+    ┌─────────────────────────────────────────────────────────────┐
+    │ Layer 2: Authorization                                      │
+    │ • mc_admin_require_login() on all admin pages               │
+    │ • Session validation                                        │
+    └─────────────────────────────────────────────────────────────┘
+                                 │
+                                 ▼
+    ┌─────────────────────────────────────────────────────────────┐
+    │ Layer 3: CSRF Protection                                    │
+    │ • Token generation (mc_csrf_token)                          │
+    │ • Token validation (mc_csrf_validate)                       │
+    │ • All POST forms protected                                  │
+    └─────────────────────────────────────────────────────────────┘
+                                 │
+                                 ▼
+    ┌─────────────────────────────────────────────────────────────┐
+    │ Layer 4: Input Validation                                   │
+    │ • HTML sanitization (strip_tags)                            │
+    │ • File type validation                                      │
+    │ • File size limits                                          │
+    └─────────────────────────────────────────────────────────────┘
+                                 │
+                                 ▼
+    ┌─────────────────────────────────────────────────────────────┐
+    │ Layer 5: SQL Injection Protection                           │
+    │ • PDO prepared statements                                   │
+    │ • Parameter binding                                         │
+    │ • No raw SQL concatenation                                  │
+    └─────────────────────────────────────────────────────────────┘
+                                 │
+                                 ▼
+    ┌─────────────────────────────────────────────────────────────┐
+    │ Layer 6: Output Escaping                                    │
+    │ • htmlspecialchars() on all output                          │
+    │ • urlencode() on URLs                                       │
+    └─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              DATA FLOW                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    CREATE POST FLOW:
+    ─────────────────
+    Admin Panel → POST /admin/panel.php
+                    ↓
+                CSRF Validation
+                    ↓
+                Input Sanitization
+                    ↓
+                mc_blog_admin_save()
+                    ↓
+                PDO Prepared Statement
+                    ↓
+                MySQL INSERT
+                    ↓
+                Redirect to Posts List
+
+    VIEW POST FLOW:
+    ───────────────
+    User visits /blog-single.php?slug=my-post
+                    ↓
+                mc_blog_find_by_slug()
+                    ↓
+                PDO Prepared Statement
+                    ↓
+                MySQL SELECT
+                    ↓
+                Format & Escape Output
+                    ↓
+                Render HTML
+
+    FILTER POSTS FLOW:
+    ──────────────────
+    User clicks category filter
+                    ↓
+                /blog.php?cat=windows
+                    ↓
+                mc_all_posts()
+                    ↓
+                mc_filter_posts_by_cat()
+                    ↓
+                mc_blog_paginate_slice()
+                    ↓
+                Render filtered results
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              FILE PERMISSIONS                                │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    includes/blog_db_config.php     → 644 (read by web server only)
+    admin/config.php                → 644 (read by web server only)
+    uploads/                        → 755 (writable by web server)
+    uploads/*.jpg                   → 644 (readable by everyone)
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              GITIGNORE RULES                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    ✅ includes/blog_db_config.php  (contains DB credentials)
+    ✅ admin/config.php              (contains admin password)
+    ✅ uploads/*                     (uploaded images)
+    ❌ uploads/.gitkeep              (keep directory in git)
+

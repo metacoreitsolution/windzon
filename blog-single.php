@@ -1,3 +1,22 @@
+<?php
+require_once __DIR__ . '/includes/blog_repository.php';
+
+// Get slug from URL
+$slug = $_GET['slug'] ?? '';
+$post = mc_blog_find_dynamic_by_slug($slug);
+
+// 404 if post not found
+if (!$post) {
+    header('HTTP/1.0 404 Not Found');
+    echo '<!DOCTYPE html><html><head><title>Post Not Found</title></head><body><h1>404 - Post Not Found</h1><p><a href="blog.php">Back to Blog</a></p></body></html>';
+    exit;
+}
+
+// Set meta tags
+$pageTitle = $post['meta_title'] ?: $post['title'];
+$pageDescription = $post['meta_description'] ?: $post['excerpt'];
+$pageKeywords = $post['meta_keywords'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +25,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="<?= htmlspecialchars($pageDescription) ?>">
+    <meta name="keywords" content="<?= htmlspecialchars($pageKeywords) ?>">
 
     <!-- title -->
-    <title>Windzon - Windows And Doors Service </title>
+    <title><?= htmlspecialchars($pageTitle) ?> - Windzon</title>
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
@@ -116,10 +135,11 @@
         <!-- breadcrumb -->
         <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/01.jpg)">
             <div class="container">
-                <h2 class="breadcrumb-title">Blog Single</h2>
+                <h2 class="breadcrumb-title"><?= htmlspecialchars($post['title']) ?></h2>
                 <ul class="breadcrumb-menu">
                     <li><a href="index.php">Home</a></li>
-                    <li class="active">Blog Single</li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li class="active"><?= htmlspecialchars($post['title']) ?></li>
                 </ul>
             </div>
         </div>
@@ -133,16 +153,17 @@
                     <div class="col-lg-8">
                         <div class="blog-single-wrapper">
                             <div class="blog-single-content">
-                                <div class="blog-thumb-img">
-                                    <img src="assets/img/blog/single.jpg" alt="thumb">
-                                </div>
+                                <?php if ($post['image_url']): ?>
+                                    <div class="blog-thumb-img">
+                                        <img src="<?= htmlspecialchars($post['image_url']) ?>" alt="<?= htmlspecialchars($post['image_alt'] ?: $post['title']) ?>">
+                                    </div>
+                                <?php endif; ?>
                                 <div class="blog-info">
                                     <div class="blog-meta">
                                         <div class="blog-meta-left">
                                             <ul>
-                                                <li><i class="far fa-user"></i><a href="#">Jean R Gunter</a></li>
-                                                <li><i class="far fa-comments"></i>3.2k Comments</li>
-												<li><i class="far fa-thumbs-up"></i>1.4k Like</li>
+                                                <li><i class="far fa-user"></i><a href="#"><?= htmlspecialchars($post['author']) ?></a></li>
+                                                <li><i class="far fa-calendar"></i><?= mc_blog_format_display_date($post['published_at']) ?></li>
                                             </ul>
                                         </div>
                                         <div class="blog-meta-right">
@@ -150,109 +171,14 @@
                                         </div>
                                     </div>
                                     <div class="blog-details">
-                                        <h3 class="blog-details-title mb-20">It is a long established fact that a reader</h3>
-                                        <p class="mb-10">
-                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                                        </p>
-                                        <p class="mb-10">
-                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. 
-                                        </p>
-										<blockquote class="blockqoute">
-											It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.
-                                            <h6 class="blockqoute-author">Mark Crawford</h6>
-                                        </blockquote>
-										<p class="mb-20">
-											In a free hour when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection.
-										</p>
-
-                                        <div class="row">
-                                            <div class="col-md-6 mb-20">
-                                                <img src="assets/img/blog/01.jpg" alt="">
-                                            </div>
-                                            <div class="col-md-6 mb-20">
-                                                <img src="assets/img/blog/02.jpg" alt="">
-                                            </div>
+                                        <h3 class="blog-details-title mb-20"><?= htmlspecialchars($post['title']) ?></h3>
+                                        <div class="blog-content">
+                                            <?= $post['body'] ?>
                                         </div>
-                                        <p class="mb-20">
-											Power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection.
-										</p>
                                         <hr>
-										<div class="blog-details-tags pb-20">
-											<h5>Tags : </h5>
-											<ul>
-												<li><a href="#">Window</a></li>
-												<li><a href="#">Door</a></li>
-												<li><a href="#">Repair</a></li>
-											</ul>
-										</div>
-                                    </div>
-                                    <div class="blog-author">
-                                        <div class="blog-author-img">
-                                            <img src="assets/img/blog/author.jpg" alt="">
+                                        <div class="mt-4">
+                                            <a href="blog.php" class="theme-btn"><i class="far fa-arrow-left"></i> Back to Blog</a>
                                         </div>
-                                        <div class="author-info">
-                                            <h6>Author</h6>
-                                            <h3 class="author-name">Agnes F. Natale</h3>
-                                            <p>It is a long established fact that a reader will be distracted by the abcd readable content of a page when looking at its layout  that more less.</p>
-                                            <div class="author-social">
-                                                <?php include __DIR__ . '/includes/partials/social-inline-fbf.php'; ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="blog-comments">
-                                    <h3>Comments (20)</h3>
-                                    <div class="blog-comments-wrapper">
-                                        <div class="blog-comments-single">
-                                            <img src="assets/img/blog/com-1.jpg" alt="thumb">
-                                            <div class="blog-comments-content">
-                                                <h5>Kecia A. Parada</h5>
-                                                <span><i class="far fa-clock"></i> March 14, 2025</span>
-                                                <p>There are many variations of passages the majority have suffered in some injected humour or randomised words which don't look even slightly believable.</p>
-                                                <a href="#"><i class="far fa-reply"></i> Reply</a>
-                                            </div>
-                                        </div>
-                                        <div class="blog-comments-single blog-comments-reply">
-                                            <img src="assets/img/blog/com-2.jpg" alt="thumb">
-                                            <div class="blog-comments-content">
-                                                <h5>Thomas A. Lindsey</h5>
-                                                <span><i class="far fa-clock"></i> March 14, 2025</span>
-                                                <p>There are many variations of passages the majority have suffered in some injected humour or randomised words which don't look even slightly believable.</p>
-                                                <a href="#"><i class="far fa-reply"></i> Reply</a>
-                                            </div>
-                                        </div>
-                                        <div class="blog-comments-single">
-                                            <img src="assets/img/blog/com-3.jpg" alt="thumb">
-                                            <div class="blog-comments-content">
-                                                <h5>Mary R. Lujan</h5>
-                                                <span><i class="far fa-clock"></i> March 14, 2025</span>
-                                                <p>There are many variations of passages the majority have suffered in some injected humour or randomised words which don't look even slightly believable.</p>
-                                                <a href="#"><i class="far fa-reply"></i> Reply</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="blog-comments-form">
-                                        <h3>Leave A Comment</h3>
-                                        <form action="#">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="Your Name*">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="email" class="form-control" placeholder="Your Email*">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <textarea class="form-control" rows="5" placeholder="Your Comment*"></textarea>
-                                                    </div>
-                                                    <button type="submit" class="theme-btn">Post Comment <i class="far fa-paper-plane"></i></button>
-                                                </div>
-                                            </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -263,8 +189,8 @@
                             <!-- search-->
                             <div class="widget search">
                                 <h5 class="widget-title">Search</h5>
-                                <form class="search-form">
-                                    <input type="text" class="form-control" placeholder="Search Here...">
+                                <form class="search-form" action="blog.php" method="get">
+                                    <input type="text" name="s" class="form-control" placeholder="Search Here...">
                                     <button type="submit"><i class="far fa-search"></i></button>
                                 </form>
                             </div>
@@ -272,63 +198,41 @@
                             <div class="widget category">
                                 <h5 class="widget-title">Category</h5>
                                 <div class="category-list">
-                                    <a href="#"><i class="far fa-arrow-right"></i>Windows Service<span>(10)</span></a>
-                                    <a href="#"><i class="far fa-arrow-right"></i>Doors Service<span>(15)</span></a>
-                                    <a href="#"><i class="far fa-arrow-right"></i>Maintenance And Repair<span>(20)</span></a>
-                                    <a href="#"><i class="far fa-arrow-right"></i>Planning And Projects<span>(30)</span></a>
-                                    <a href="#"><i class="far fa-arrow-right"></i>Replace Accessories<span>(25)</span></a>
+                                    <?php
+                                    $categories = mc_blog_fetch_all_categories();
+                                    foreach ($categories as $cat):
+                                    ?>
+                                        <a href="blog.php?cat=<?= urlencode($cat['slug']) ?>">
+                                            <i class="far fa-arrow-right"></i><?= htmlspecialchars($cat['label']) ?>
+                                        </a>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                             <!-- recent post -->
                             <div class="widget recent-post">
                                 <h5 class="widget-title">Recent Post</h5>
-                                <div class="recent-post-single">
-                                    <div class="recent-post-img">
-                                        <img src="assets/img/blog/bs-1.jpg" alt="thumb">
+                                <?php
+                                $recentPosts = array_slice(mc_all_posts(), 0, 3);
+                                foreach ($recentPosts as $recentPost):
+                                ?>
+                                    <div class="recent-post-single">
+                                        <?php if ($recentPost['image_url']): ?>
+                                            <div class="recent-post-img">
+                                                <img src="<?= htmlspecialchars($recentPost['image_url']) ?>" alt="<?= htmlspecialchars($recentPost['title']) ?>">
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="recent-post-bio">
+                                            <h6><a href="blog-single.php?slug=<?= urlencode($recentPost['slug']) ?>"><?= htmlspecialchars($recentPost['title']) ?></a></h6>
+                                            <span><i class="far fa-clock"></i><?= mc_blog_format_display_date($recentPost['published_at']) ?></span>
+                                        </div>
                                     </div>
-                                    <div class="recent-post-bio">
-                                        <h6><a href="#">There are many variations of passages available</a></h6>
-                                        <span><i class="far fa-clock"></i>March 14, 2025</span>
-                                    </div>
-                                </div>
-                                <div class="recent-post-single">
-                                    <div class="recent-post-img">
-                                        <img src="assets/img/blog/bs-2.jpg" alt="thumb">
-                                    </div>
-                                    <div class="recent-post-bio">
-                                        <h6><a href="#">There are many variations of passages available</a></h6>
-                                        <span><i class="far fa-clock"></i>March 14, 2025</span>
-                                    </div>
-                                </div>
-                                <div class="recent-post-single">
-                                    <div class="recent-post-img">
-                                        <img src="assets/img/blog/bs-3.jpg" alt="thumb">
-                                    </div>
-                                    <div class="recent-post-bio">
-                                        <h6><a href="#">There are many variations of passages available</a></h6>
-                                        <span><i class="far fa-clock"></i>March 14, 2025</span>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
                             <!-- social share -->
                             <div class="widget social-share">
                                 <h5 class="widget-title">Follow Us</h5>
                                 <div class="social-share-link">
                                     <?php include __DIR__ . '/includes/partials/social-inline-fbf.php'; ?>
-                                </div>
-                            </div>
-                            <!-- Recent Post -->
-                            <div class="widget sidebar-tag">
-                                <h5 class="widget-title">Popular Tags</h5>
-                                <div class="tag-list">
-                                    <a href="#">Window</a>
-                                    <a href="#">Door</a>
-                                    <a href="#">Repair</a>
-                                    <a href="#">Tips</a>
-                                    <a href="#">Modern</a>
-                                    <a href="#">Offer</a>
-                                    <a href="#">Maintenance</a>
-                                    <a href="#">Luxury</a>
                                 </div>
                             </div>
                         </aside>

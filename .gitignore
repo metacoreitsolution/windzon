@@ -1,1 +1,5 @@
 includes/config.local.php
+includes/blog_db_config.php
+admin/config.php
+uploads/*
+!uploads/.gitkeep
