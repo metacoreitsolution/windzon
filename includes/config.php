@@ -14,7 +14,7 @@ if (is_file($windzonConfigLocal)) {
 }
 
 if (!defined('WINDZON_MAIL_TO')) {
-    define('WINDZON_MAIL_TO', 'dhorajiyabrijesh607@gmail.com');
+    define('WINDZON_MAIL_TO', 'windzonesystemllp@gmail.com');
 }
 
 if (!defined('WINDZON_MAIL_FROM')) {
